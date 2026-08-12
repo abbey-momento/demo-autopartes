@@ -110,7 +110,7 @@ tailwind.config = {
   </div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 pt-14 pb-24 md:pt-24 md:pb-32 flex flex-col items-start">
     <span class="inline-flex items-center gap-2 bg-pink text-white text-xs md:text-sm font-bold tracking-widest uppercase px-3 py-1.5 mb-5 rounded-sm">
-      Desde 1998 · Refacciones originales y de alto desempeño
+      Desde 1998 · Especialistas en Nissan, cobertura multimarca
     </span>
     <h1 class="text-4xl md:text-7xl font-display font-semibold text-white leading-[0.95] mb-5 uppercase drop-shadow-lg">
       Potencia<br><span class="text-transparent bg-clip-text bg-gradient-to-r from-gray-100 to-gray-400">sin límites</span>
@@ -138,21 +138,145 @@ tailwind.config = {
       <h2 class="text-lg md:text-xl font-display font-semibold text-ink uppercase tracking-wide">Encuentra tu refacción exacta</h2>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4">
-      <select class="bg-gray-50 text-ink font-medium text-sm p-3.5 rounded-lg border border-gray-200 focus:outline-none focus:border-pink focus:bg-white transition-colors cursor-pointer">
-        <option>1. Selecciona Marca</option>
-        <option>Toyota</option>
-        <option>Nissan</option>
-        <option>Chevrolet</option>
-      </select>
-      <select class="bg-gray-50 text-ink font-medium text-sm p-3.5 rounded-lg border border-gray-200 focus:outline-none focus:border-pink focus:bg-white transition-colors cursor-pointer">
-        <option>2. Selecciona Modelo</option>
-      </select>
-      <select class="bg-gray-50 text-ink font-medium text-sm p-3.5 rounded-lg border border-gray-200 focus:outline-none focus:border-pink focus:bg-white transition-colors cursor-pointer">
-        <option>3. Año</option>
-      </select>
-      <a href="products.html" class="bg-ink hover:bg-blue-dark text-white font-bold uppercase tracking-wide py-3.5 rounded-lg shadow-md transition-colors flex items-center justify-center gap-2">
-        Buscar Piezas
-      </a>
+      <div>
+        <label class="text-[11px] font-bold text-steel uppercase tracking-wide mb-1 block">Marca <span class="text-pink">*</span></label>
+        <select class="w-full bg-gray-50 text-ink font-medium text-sm p-3.5 rounded-lg border border-gray-200 focus:outline-none focus:border-pink focus:bg-white transition-colors cursor-pointer">
+          <option>Selecciona marca</option>
+          <option>Nissan</option>
+          <option>Toyota</option>
+          <option>Chevrolet</option>
+        </select>
+      </div>
+      <div>
+        <label class="text-[11px] font-bold text-steel uppercase tracking-wide mb-1 block">Modelo <span class="text-pink">*</span></label>
+        <select class="w-full bg-gray-50 text-ink font-medium text-sm p-3.5 rounded-lg border border-gray-200 focus:outline-none focus:border-pink focus:bg-white transition-colors cursor-pointer">
+          <option>Selecciona modelo</option>
+        </select>
+      </div>
+      <div>
+        <label class="text-[11px] font-bold text-steel uppercase tracking-wide mb-1 block">Año <span class="text-pink">*</span></label>
+        <select class="w-full bg-gray-50 text-ink font-medium text-sm p-3.5 rounded-lg border border-gray-200 focus:outline-none focus:border-pink focus:bg-white transition-colors cursor-pointer">
+          <option>Selecciona año</option>
+        </select>
+      </div>
+      <div class="flex flex-col justify-end">
+        <a href="products.html" class="bg-ink hover:bg-blue-dark text-white font-bold uppercase tracking-wide py-3.5 rounded-lg shadow-md transition-colors flex items-center justify-center gap-2">
+          Buscar Piezas
+        </a>
+      </div>
+    </div>
+    <div class="flex justify-between items-center mt-4 text-xs font-semibold">
+      <button class="text-blue hover:text-blue-dark flex items-center gap-1">
+        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path></svg>
+        Ver más filtros
+      </button>
+      <button class="text-steel hover:text-ink">Limpiar búsqueda</button>
+    </div>
+  </div>
+</section>
+
+<!-- Trust strip -->
+<section class="max-w-7xl mx-auto px-4 mb-14">
+  <div class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
+    <div class="flex flex-col items-center text-center gap-2">
+      <div class="w-11 h-11 rounded-full bg-pink/10 text-pink flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg></div>
+      <p class="text-xs font-bold text-ink leading-tight">Garantía en<br>todas las piezas</p>
+    </div>
+    <div class="flex flex-col items-center text-center gap-2">
+      <div class="w-11 h-11 rounded-full bg-blue/10 text-blue flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></div>
+      <p class="text-xs font-bold text-ink leading-tight">Calidad grado<br>O.E.M.</p>
+    </div>
+    <div class="flex flex-col items-center text-center gap-2">
+      <div class="w-11 h-11 rounded-full bg-pink/10 text-pink flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
+      <p class="text-xs font-bold text-ink leading-tight">Precio<br>competitivo</p>
+    </div>
+    <div class="flex flex-col items-center text-center gap-2">
+      <div class="w-11 h-11 rounded-full bg-blue/10 text-blue flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg></div>
+      <p class="text-xs font-bold text-ink leading-tight">Amplio<br>surtido</p>
+    </div>
+    <div class="flex flex-col items-center text-center gap-2 col-span-2 md:col-span-1">
+      <div class="w-11 h-11 rounded-full bg-pink/10 text-pink flex items-center justify-center"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path></svg></div>
+      <p class="text-xs font-bold text-ink leading-tight">Recoge gratis<br>en sucursal</p>
+    </div>
+  </div>
+</section>
+
+<!-- Category grid -->
+<section class="max-w-7xl mx-auto px-4 mb-14">
+  <h2 class="text-2xl md:text-3xl font-display font-semibold text-ink uppercase tracking-tight mb-6 flex items-center gap-3">
+    <span class="w-1.5 h-8 bg-pink inline-block"></span> Autopartes por Categoría
+  </h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-3 md:gap-4">
+    <a href="products.html" class="group bg-white border border-gray-100 hover:border-pink rounded-xl p-4 flex flex-col items-center text-center gap-2.5 shadow-sm hover:shadow-md transition-all">
+      <div class="w-12 h-12 rounded-full bg-gray-50 group-hover:bg-pink/10 flex items-center justify-center text-ink group-hover:text-pink transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3l2.5 4.5L19 9l-4.5 1.5L12 15l-2.5-4.5L5 9l4.5-1.5L12 3z"></path></svg>
+      </div>
+      <span class="text-[11px] font-bold text-ink uppercase leading-tight">Accesorios</span>
+      <span class="text-[10px] text-steel font-mono">24 productos</span>
+    </a>
+    <a href="products.html" class="group bg-white border border-gray-100 hover:border-pink rounded-xl p-4 flex flex-col items-center text-center gap-2.5 shadow-sm hover:shadow-md transition-all">
+      <div class="w-12 h-12 rounded-full bg-gray-50 group-hover:bg-pink/10 flex items-center justify-center text-ink group-hover:text-pink transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 4v2m0 2a5 5 0 015 5c0 3-2 4.5-2 6.5a3 3 0 01-6 0c0-2-2-3.5-2-6.5a5 5 0 015-5z"></path></svg>
+      </div>
+      <span class="text-[11px] font-bold text-ink uppercase leading-tight">Aditivos</span>
+      <span class="text-[10px] text-steel font-mono">18 productos</span>
+    </a>
+    <a href="products.html" class="group bg-white border border-gray-100 hover:border-pink rounded-xl p-4 flex flex-col items-center text-center gap-2.5 shadow-sm hover:shadow-md transition-all">
+      <div class="w-12 h-12 rounded-full bg-gray-50 group-hover:bg-pink/10 flex items-center justify-center text-ink group-hover:text-pink transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 3a3 3 0 100 6 3 3 0 000-6zM4 21c0-3 3-5 8-5s8 2 8 5"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 9v3"></path></svg>
+      </div>
+      <span class="text-[11px] font-bold text-ink uppercase leading-tight">Dirección</span>
+      <span class="text-[10px] text-steel font-mono">12 productos</span>
+    </a>
+    <a href="products.html" class="group bg-white border border-gray-100 hover:border-pink rounded-xl p-4 flex flex-col items-center text-center gap-2.5 shadow-sm hover:shadow-md transition-all">
+      <div class="w-12 h-12 rounded-full bg-gray-50 group-hover:bg-pink/10 flex items-center justify-center text-ink group-hover:text-pink transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+      </div>
+      <span class="text-[11px] font-bold text-ink uppercase leading-tight">Eléctrico</span>
+      <span class="text-[10px] text-steel font-mono">15 productos</span>
+    </a>
+    <a href="products.html" class="group bg-white border border-gray-100 hover:border-pink rounded-xl p-4 flex flex-col items-center text-center gap-2.5 shadow-sm hover:shadow-md transition-all">
+      <div class="w-12 h-12 rounded-full bg-gray-50 group-hover:bg-pink/10 flex items-center justify-center text-ink group-hover:text-pink transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" stroke-width="1.8"></circle><circle cx="12" cy="12" r="2.5" stroke-width="1.8"></circle></svg>
+      </div>
+      <span class="text-[11px] font-bold text-ink uppercase leading-tight">Frenos</span>
+      <span class="text-[10px] text-steel font-mono">20 productos</span>
+    </a>
+    <a href="products.html" class="group bg-white border border-gray-100 hover:border-pink rounded-xl p-4 flex flex-col items-center text-center gap-2.5 shadow-sm hover:shadow-md transition-all">
+      <div class="w-12 h-12 rounded-full bg-gray-50 group-hover:bg-pink/10 flex items-center justify-center text-ink group-hover:text-pink transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 7h9l3 3v4h-2m-10 0H4v-4l2-3zm3 7a2 2 0 100-4 2 2 0 000 4zm9 0a2 2 0 100-4 2 2 0 000 4z"></path></svg>
+      </div>
+      <span class="text-[11px] font-bold text-ink uppercase leading-tight">Motor</span>
+      <span class="text-[10px] text-steel font-mono">28 productos</span>
+    </a>
+    <a href="products.html" class="group bg-white border border-gray-100 hover:border-pink rounded-xl p-4 flex flex-col items-center text-center gap-2.5 shadow-sm hover:shadow-md transition-all col-span-2 md:col-span-1">
+      <div class="w-12 h-12 rounded-full bg-gray-50 group-hover:bg-pink/10 flex items-center justify-center text-ink group-hover:text-pink transition-colors">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 19l4-10 4 6 3-4 5 8M6 5l3 3"></path></svg>
+      </div>
+      <span class="text-[11px] font-bold text-ink uppercase leading-tight">Suspensión</span>
+      <span class="text-[10px] text-steel font-mono">22 productos</span>
+    </a>
+  </div>
+</section>
+
+<!-- Stats bar -->
+<section class="bg-ink mb-14">
+  <div class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+    <div>
+      <div class="text-3xl md:text-4xl font-display font-semibold text-white">25+</div>
+      <p class="text-gray-400 text-xs md:text-sm font-medium uppercase tracking-wide mt-1">Años de experiencia</p>
+    </div>
+    <div>
+      <div class="text-3xl md:text-4xl font-display font-semibold text-pink">3</div>
+      <p class="text-gray-400 text-xs md:text-sm font-medium uppercase tracking-wide mt-1">Sucursales en México</p>
+    </div>
+    <div>
+      <div class="text-3xl md:text-4xl font-display font-semibold text-white">500+</div>
+      <p class="text-gray-400 text-xs md:text-sm font-medium uppercase tracking-wide mt-1">Refacciones en catálogo</p>
+    </div>
+    <div>
+      <div class="text-3xl md:text-4xl font-display font-semibold text-pink">12k+</div>
+      <p class="text-gray-400 text-xs md:text-sm font-medium uppercase tracking-wide mt-1">Clientes atendidos</p>
     </div>
   </div>
 </section>
@@ -301,30 +425,48 @@ tailwind.config = {
 
 <!-- Footer -->
 <footer id="contacto" class="bg-ink text-gray-400 mt-12 pb-20 md:pb-0">
-  <div class="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
-    <div class="col-span-1 md:col-span-2">
+  <div class="max-w-7xl mx-auto px-4 py-16 grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-10 text-sm">
+    <div class="col-span-2">
       <img src="images/logo.webp" alt="Autopartes Johnny's" class="h-10 mb-6 brightness-0 invert opacity-90">
-      <p class="text-sm text-gray-400 font-medium leading-relaxed max-w-sm">Alta precisión y desempeño para tu vehículo. Tu refaccionaria de confianza con envíos seguros a todo México y 3 sucursales físicas.</p>
+      <p class="text-sm text-gray-400 font-medium leading-relaxed max-w-sm mb-6">Alta precisión y desempeño para tu vehículo. Especialistas en refacciones Nissan, con cobertura multimarca, envíos a todo México y 3 sucursales físicas.</p>
+      <a href="https://wa.me/527220000000" class="inline-flex items-center gap-2 bg-pink hover:bg-pink-dark text-white text-sm font-bold px-6 py-3 rounded-lg transition-colors">Soporte WhatsApp</a>
     </div>
     <div>
-      <h4 class="text-white font-bold mb-6 tracking-wider text-xs uppercase">Links Rápidos</h4>
+      <h4 class="text-white font-bold mb-6 tracking-wider text-xs uppercase">Encuentra</h4>
       <ul class="space-y-3 text-sm font-medium">
         <li><a href="index.html" class="hover:text-white transition-colors">Inicio</a></li>
         <li><a href="products.html" class="hover:text-white transition-colors">Catálogo Completo</a></li>
         <li><a href="sucursales.html" class="hover:text-white transition-colors">Sucursales</a></li>
+        <li><a href="products.html" class="hover:text-white transition-colors">Ofertas</a></li>
       </ul>
     </div>
     <div>
-      <h4 class="text-white font-bold mb-6 tracking-wider text-xs uppercase">Contacto</h4>
-      <a href="https://wa.me/527220000000" class="inline-flex items-center gap-2 bg-pink hover:bg-pink-dark text-white text-sm font-bold px-6 py-3 rounded-lg transition-colors">
-        Soporte WhatsApp
-      </a>
+      <h4 class="text-white font-bold mb-6 tracking-wider text-xs uppercase">Categorías</h4>
+      <ul class="space-y-3 text-sm font-medium">
+        <li><a href="products.html" class="hover:text-white transition-colors">Motor</a></li>
+        <li><a href="products.html" class="hover:text-white transition-colors">Eléctrico</a></li>
+        <li><a href="products.html" class="hover:text-white transition-colors">Aceites y Aditivos</a></li>
+        <li><a href="products.html" class="hover:text-white transition-colors">Suspensión</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-bold mb-6 tracking-wider text-xs uppercase">Atención al Cliente</h4>
+      <ul class="space-y-3 text-sm font-medium">
+        <li><a href="sucursales.html#contacto" class="hover:text-white transition-colors">Contacto</a></li>
+        <li><a href="sucursales.html" class="hover:text-white transition-colors">Preguntas Frecuentes</a></li>
+        <li><a href="sucursales.html" class="hover:text-white transition-colors">Garantías</a></li>
+      </ul>
     </div>
   </div>
   <div class="border-t border-gray-800 py-6 text-center text-xs text-gray-500 font-medium">
     <p>&copy; 2026 Autopartes Johnny's. Todos los derechos reservados. · Sitio de demostración</p>
   </div>
 </footer>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/527220000000" class="fixed bottom-20 md:bottom-6 right-4 md:right-6 z-40 w-14 h-14 bg-green-500 hover:bg-green-600 rounded-full shadow-lg flex items-center justify-center transition-colors" aria-label="Escríbenos por WhatsApp">
+  <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm0 18.13h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 01-1.26-4.4c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 012.42 5.83c0 4.55-3.7 8.25-8.25 8.25zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.17 1.73 2.64 4.19 3.71.59.25 1.04.4 1.4.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.2-.58.2-1.07.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+</a>
 
 </body>
 </html>
