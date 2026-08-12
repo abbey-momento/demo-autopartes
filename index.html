@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="robots" content="noindex, nofollow">
-    <title>Demo Autopartes | Refacciones y Accesorios</title>
+    <title>Demo Autopartes | Inicio - Refacciones y Accesorios</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -51,10 +51,11 @@
         <div class="max-w-7xl mx-auto px-4 py-2.5 md:py-4 flex justify-between items-center gap-4">
             
             <a href="#" class="block shrink-0 hover:opacity-90 transition-opacity">
-                <img src="logo.png" alt="Autopartes" class="h-10 md:h-16 w-auto object-contain">
+                <!-- PNGからWebPへ差し替え -->
+                <img src="logo.webp" alt="Autopartes" class="h-10 md:h-16 w-auto object-contain">
             </a>
 
-            <!-- 検索バー -->
+            <!-- 検索バー (PC) -->
             <div class="hidden md:flex flex-1 max-w-xl mx-4 relative">
                 <input type="text" placeholder="Busca por pieza, marca o número de parte..." class="w-full bg-gray-100 rounded-full py-2.5 pl-5 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent/50 transition">
                 <svg class="w-5 h-5 text-gray-400 absolute right-4 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
@@ -76,11 +77,11 @@
         </div>
     </header>
 
-    <!-- 【主役】ファーストビューのプロモーションバナー（縦幅をしっかり取り、ドーンと魅せる） -->
+    <!-- 【主役】プロモーションバナー (WebPへ差し替え) -->
     <section class="max-w-7xl mx-auto px-4 pt-3 pb-2">
         <div class="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-2xl text-white min-h-[380px] md:min-h-[460px] flex items-center bg-gray-950">
             <div class="absolute inset-0 z-0">
-                <img src="banner-product.png" alt="Promoción" class="w-full h-full object-cover object-center opacity-90">
+                <img src="sample1.webp" alt="Promoción" class="w-full h-full object-cover object-center opacity-85">
                 <div class="absolute inset-0 bg-gradient-to-r from-gray-950/95 via-gray-950/70 to-transparent md:w-3/4"></div>
             </div>
             
@@ -89,17 +90,16 @@
                     Gran Promoción
                 </span>
                 <h1 class="text-2xl md:text-5xl font-black mb-3 leading-tight tracking-tight drop-shadow-lg">
-                    ACEITE Y BATERÍAS AL MEJOR PRECIO
+                    ACEITE SINTÉTICO AL MEJOR PRECIO
                 </h1>
                 <p class="text-gray-200 mb-6 text-sm md:text-base font-medium max-w-lg drop-shadow">
-                    Encuentra la potencia y protección ideal para tu auto con marcas líderes y garantía total.
+                    Encuentra la potencia y protección ideal para tu auto con marcas líderes y garantia total.
                 </p>
                 <button class="bg-brand-accent text-white hover:bg-blue-700 font-extrabold py-3 px-8 rounded-xl shadow-lg text-sm md:text-base transition-transform duration-300 hover:scale-105">
                     COMPRA AQUÍ →
                 </button>
             </div>
 
-            <!-- スライダーのドット（複数枚ある演出） -->
             <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
                 <span class="w-6 h-2 bg-white rounded-full shadow"></span>
                 <span class="w-2 h-2 bg-white/50 rounded-full shadow"></span>
@@ -108,7 +108,7 @@
         </div>
     </section>
 
-    <!-- 車種パーツ検索フィルター（バナーの下に配置し、SP時はすっきりとスマートに） -->
+    <!-- 車種パーツ検索フィルター -->
     <section class="max-w-7xl mx-auto px-4 py-2">
         <div class="bg-gray-900 text-white p-3.5 md:p-5 rounded-2xl shadow-md border border-gray-800">
             <div class="text-[11px] md:text-xs font-bold text-gray-300 mb-2 uppercase tracking-wider flex items-center gap-1.5">
@@ -157,6 +157,42 @@
         </div>
     </section>
 
+    <!-- 【特集】ブランドギャラリー (作成した2つの画像を使用) -->
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <h2 class="text-lg md:text-2xl font-bold text-brand-dark mb-6">Tu Auto, Tu Estilo</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            
+            <!-- カード1: ガレージ (image_23.png) -->
+            <div class="group rounded-3xl overflow-hidden shadow-lg relative min-h-[250px] md:min-h-[300px] flex items-end">
+                <img src="image_23.png" alt="Toyota Corolla ガレージ" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent"></div>
+                <div class="relative z-10 p-6 md:p-8 text-white">
+                    <span class="inline-block bg-white/10 backdrop-blur-sm text-xs font-medium px-3 py-1 rounded-full mb-3 border border-white/20">Mantenimiento & Estilo</span>
+                    <h3 class="text-xl md:text-2xl font-black mb-2 drop-shadow-md">Servicio y Precisión Profesional</h3>
+                    <p class="text-gray-200 text-xs md:text-sm max-w-md opacity-90 drop-shadow">Equipa tu vehículo con las mejores refacciones para un rendimiento impecable.</p>
+                    <button class="mt-4 text-brand-accent font-bold text-sm flex items-center gap-1.5 hover:gap-2.5 transition-all hover:text-white">
+                        Ver refacciones para motor →
+                    </button>
+                </div>
+            </div>
+
+            <!-- カード2: 自然 (image_24.png) -->
+            <div class="group rounded-3xl overflow-hidden shadow-lg relative min-h-[250px] md:min-h-[300px] flex items-end">
+                <img src="image_24.png" alt="Toyota Corolla 自然の中" class="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-900/80 via-gray-900/20 to-transparent"></div>
+                <div class="relative z-10 p-6 md:p-8 text-white">
+                    <span class="inline-block bg-white/10 backdrop-blur-sm text-xs font-medium px-3 py-1 rounded-full mb-3 border border-white/20">Aventura & Accesorios</span>
+                    <h3 class="text-xl md:text-2xl font-black mb-2 drop-shadow-md">Listo para Cualquier Camino</h3>
+                    <p class="text-gray-200 text-xs md:text-sm max-w-md opacity-90 drop-shadow">Descubre accesorios y refacciones untuk viajes y caminos exigentes.</p>
+                    <button class="mt-4 text-brand-accent font-bold text-sm flex items-center gap-1.5 hover:gap-2.5 transition-all hover:text-white">
+                        Explorar accesorios off-road →
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- カテゴリーセクション -->
     <section class="max-w-7xl mx-auto px-4 py-6">
         <h2 class="text-lg md:text-2xl font-bold text-brand-dark mb-4">Autopartes por Categoría</h2>
@@ -199,7 +235,7 @@
         </div>
     </section>
 
-    <!-- 商品グリッド -->
+    <!-- 商品グリッド (作成した架空の商品WebP画像を反映) -->
     <section class="max-w-7xl mx-auto px-4 py-4">
         <div class="flex justify-between items-end mb-4">
             <h2 class="text-lg md:text-2xl font-bold text-brand-dark">Ofertas Destacadas</h2>
@@ -207,20 +243,20 @@
         </div>
         
         <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+            
+            <!-- 商品カード 1 (オルタネーター: sample3.webp) -->
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
                 <div class="absolute top-2 left-2 bg-emerald-600 text-white text-[9px] md:text-[10px] font-bold px-2 py-0.5 rounded-md z-10">
                     Llega mañana
                 </div>
                 <div class="h-32 md:h-48 bg-gray-50 flex items-center justify-center p-3 relative overflow-hidden">
-                    <div class="w-full h-full border-2 border-dashed border-gray-200 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
-                        <span class="text-gray-400 text-xs text-center">Imagen<br>Producto</span>
-                    </div>
+                    <img src="sample3.webp" alt="Alternador" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
                 </div>
                 <div class="p-3 md:p-4 flex flex-col flex-1">
-                    <span class="text-[9px] md:text-[10px] text-gray-500 uppercase font-semibold mb-1">Suspensión</span>
-                    <h3 class="text-xs md:text-sm font-medium text-gray-800 leading-tight mb-2 md:mb-3 flex-1 line-clamp-2">Horquilla Inferior Derecha Modelo (Ejemplo)</h3>
+                    <span class="text-[9px] md:text-[10px] text-gray-500 uppercase font-semibold mb-1">Eléctrico</span>
+                    <h3 class="text-xs md:text-sm font-medium text-gray-800 leading-tight mb-2 md:mb-3 flex-1 line-clamp-2">Alternador Automotriz Alta Durabilidad</h3>
                     <div class="flex items-center gap-2 mb-2 md:mb-3">
-                        <div class="text-base md:text-xl font-black text-brand-dark">$XXX.00</div>
+                        <div class="text-base md:text-xl font-black text-brand-dark">$1,450.00</div>
                         <div class="text-[10px] md:text-xs text-emerald-600 font-bold hidden md:block">15% OFF</div>
                     </div>
                     <button class="w-full bg-gray-900 text-white hover:bg-brand-accent text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors">
@@ -229,26 +265,66 @@
                 </div>
             </div>
 
+            <!-- 商品カード 2 (オイル: sample4.webp) -->
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
                 <div class="absolute top-2 left-2 bg-blue-600 text-white text-[9px] md:text-[10px] font-bold px-2 py-0.5 rounded-md z-10">
                     Envío Gratis
                 </div>
                 <div class="h-32 md:h-48 bg-gray-50 flex items-center justify-center p-3 relative overflow-hidden">
-                    <div class="w-full h-full border-2 border-dashed border-gray-200 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
-                        <span class="text-gray-400 text-xs text-center">Imagen<br>Producto</span>
-                    </div>
+                    <img src="sample4.webp" alt="Aceite Sintético" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
                 </div>
                 <div class="p-3 md:p-4 flex flex-col flex-1">
                     <span class="text-[9px] md:text-[10px] text-gray-500 uppercase font-semibold mb-1">Aditivos</span>
-                    <h3 class="text-xs md:text-sm font-medium text-gray-800 leading-tight mb-2 md:mb-3 flex-1 line-clamp-2">Aceite Multigrado 1lt 25W-50 Alto Kilometraje</h3>
+                    <h3 class="text-xs md:text-sm font-medium text-gray-800 leading-tight mb-2 md:mb-3 flex-1 line-clamp-2">Aceite Synth-Etec Full Synthetic 5W-30 1L</h3>
                     <div class="flex items-center gap-2 mb-2 md:mb-3">
-                        <div class="text-base md:text-xl font-black text-brand-dark">$XXX.00</div>
+                        <div class="text-base md:text-xl font-black text-brand-dark">$280.00</div>
                     </div>
                     <button class="w-full bg-gray-900 text-white hover:bg-brand-accent text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors">
                         Agregar
                     </button>
                 </div>
             </div>
+
+            <!-- 商品カード 3 (コイル: sample5.webp) -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+                <div class="absolute top-2 left-2 bg-emerald-600 text-white text-[9px] md:text-[10px] font-bold px-2 py-0.5 rounded-md z-10">
+                    Garantía
+                </div>
+                <div class="h-32 md:h-48 bg-gray-50 flex items-center justify-center p-3 relative overflow-hidden">
+                    <img src="sample5.webp" alt="Bobina de Encendido" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-3 md:p-4 flex flex-col flex-1">
+                    <span class="text-[9px] md:text-[10px] text-gray-500 uppercase font-semibold mb-1">Eléctrico</span>
+                    <h3 class="text-xs md:text-sm font-medium text-gray-800 leading-tight mb-2 md:mb-3 flex-1 line-clamp-2">Bobina de Encendido / Ignition Coil</h3>
+                    <div class="flex items-center gap-2 mb-2 md:mb-3">
+                        <div class="text-base md:text-xl font-black text-brand-dark">$650.00</div>
+                    </div>
+                    <button class="w-full bg-gray-900 text-white hover:bg-brand-accent text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors">
+                        Agregar
+                    </button>
+                </div>
+            </div>
+
+            <!-- 商品カード 4 (スロットルボディ: sample6.webp) -->
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+                <div class="absolute top-2 left-2 bg-blue-600 text-white text-[9px] md:text-[10px] font-bold px-2 py-0.5 rounded-md z-10">
+                    Envío Gratis
+                </div>
+                <div class="h-32 md:h-48 bg-gray-50 flex items-center justify-center p-3 relative overflow-hidden">
+                    <img src="sample6.webp" alt="Cuerpo de Aceleración" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-3 md:p-4 flex flex-col flex-1">
+                    <span class="text-[9px] md:text-[10px] text-gray-500 uppercase font-semibold mb-1">Motor</span>
+                    <h3 class="text-xs md:text-sm font-medium text-gray-800 leading-tight mb-2 md:mb-3 flex-1 line-clamp-2">Cuerpo de Aceleración Electrónico</h3>
+                    <div class="flex items-center gap-2 mb-2 md:mb-3">
+                        <div class="text-base md:text-xl font-black text-brand-dark">$2,100.00</div>
+                    </div>
+                    <button class="w-full bg-gray-900 text-white hover:bg-brand-accent text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors">
+                        Agregar
+                    </button>
+                </div>
+            </div>
+
         </div>
     </section>
 
