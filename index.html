@@ -14,9 +14,9 @@
                     fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
                         brand: { 
-                            accent: '#FF007F', 
-                            dark: '#111827', 
-                            light: '#F3F4F6' 
+                            accent: '#2563EB', /* 鮮やかなブルーに変更 */
+                            dark: '#0F172A',   /* より深い黒系ダーク */
+                            light: '#F8FAFC' 
                         }
                     }
                 }
@@ -30,7 +30,7 @@
         @media (min-width: 768px) { body { padding-bottom: 0; } }
     </style>
 </head>
-<body class="bg-brand-light text-gray-800 antialiased">
+<body class="bg-brand-light text-gray-900 antialiased">
 
     <!-- ヘッダー -->
     <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100 transition-all">
@@ -60,18 +60,14 @@
         </div>
     </header>
 
-    <!-- プロモーションバナーエリア (作成した画像を背景に組み込み) -->
+    <!-- プロモーションバナーエリア -->
     <section class="max-w-7xl mx-auto px-4 py-4">
-        <div class="relative rounded-3xl overflow-hidden shadow-xl text-white min-h-[380px] md:min-h-[420px] flex items-center bg-gray-900">
-            
-            <!-- 背景画像 -->
+        <div class="relative rounded-3xl overflow-hidden shadow-xl text-white min-h-[380px] md:min-h-[420px] flex items-center bg-gray-950">
             <div class="absolute inset-0 z-0">
-                <img src="banner-product.png" alt="Promoción" class="w-full h-full object-cover object-center opacity-90">
-                <!-- テキストの視認性を高めるための左側のグラデーションレイヤー -->
-                <div class="absolute inset-0 bg-gradient-to-r from-gray-950/90 via-gray-950/50 to-transparent md:w-3/4"></div>
+                <img src="banner-product.png" alt="Promoción" class="w-full h-full object-cover object-center opacity-85">
+                <div class="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/70 to-transparent md:w-3/4"></div>
             </div>
             
-            <!-- コンテンツエリア -->
             <div class="relative z-10 w-full max-w-3xl p-6 md:p-12">
                 <span class="inline-block bg-brand-accent text-white text-xs font-black px-3.5 py-1.5 rounded-full mb-4 uppercase tracking-wider shadow-md">
                     Gran Promoción
@@ -79,15 +75,14 @@
                 <h1 class="text-2xl md:text-5xl font-black mb-3 leading-tight tracking-tight drop-shadow-lg">
                     ACEITE Y BATERÍAS AL MEJOR PRECIO
                 </h1>
-                <p class="text-gray-200 mb-6 text-sm md:text-base font-medium max-w-lg drop-shadow">
+                <p class="text-gray-300 mb-6 text-sm md:text-base font-medium max-w-lg drop-shadow">
                     Encuentra la potencia y protección ideal para tu auto con marcas líderes y garantía total.
                 </p>
-                <button class="bg-brand-accent text-white hover:bg-pink-600 font-extrabold py-3.5 px-8 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105">
+                <button class="bg-brand-accent text-white hover:bg-blue-700 font-extrabold py-3.5 px-8 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105">
                     COMPRA AQUÍ →
                 </button>
             </div>
 
-            <!-- スライダーのドット -->
             <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
                 <span class="w-6 h-2 bg-white rounded-full shadow"></span>
                 <span class="w-2 h-2 bg-white/50 rounded-full shadow"></span>
@@ -140,12 +135,12 @@
     <section class="max-w-7xl mx-auto px-4 py-6">
         <div class="flex justify-between items-end mb-6">
             <h2 class="text-xl md:text-2xl font-bold text-brand-dark">Ofertas Destacadas</h2>
-            <a href="#" class="text-sm font-semibold text-blue-600 hover:underline">Ver todo</a>
+            <a href="#" class="text-sm font-semibold text-brand-accent hover:underline">Ver todo</a>
         </div>
         
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
-                <div class="absolute top-2 left-2 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-md z-10">
+                <div class="absolute top-2 left-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-md z-10">
                     Llega mañana
                 </div>
                 <div class="h-36 md:h-48 bg-gray-50 flex items-center justify-center p-4 relative overflow-hidden">
@@ -158,16 +153,16 @@
                     <h3 class="text-sm font-medium text-gray-800 leading-tight mb-3 flex-1 line-clamp-2">Horquilla Inferior Derecha Modelo (Ejemplo)</h3>
                     <div class="flex items-center gap-2 mb-3">
                         <div class="text-lg md:text-xl font-black text-brand-dark">$XXX.00</div>
-                        <div class="text-xs text-green-600 font-bold hidden md:block">15% OFF</div>
+                        <div class="text-xs text-emerald-600 font-bold hidden md:block">15% OFF</div>
                     </div>
-                    <button class="w-full bg-gray-50 text-brand-dark border border-gray-200 hover:bg-brand-accent hover:text-white hover:border-brand-accent text-sm font-bold py-2.5 rounded-xl transition-colors">
+                    <button class="w-full bg-gray-900 text-white hover:bg-brand-accent text-sm font-bold py-2.5 rounded-xl transition-colors">
                         Agregar
                     </button>
                 </div>
             </div>
 
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
-                <div class="absolute top-2 left-2 bg-blue-500 text-white text-[10px] font-bold px-2 py-1 rounded-md z-10">
+                <div class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded-md z-10">
                     Envío Gratis
                 </div>
                 <div class="h-36 md:h-48 bg-gray-50 flex items-center justify-center p-4 relative overflow-hidden">
@@ -181,7 +176,7 @@
                     <div class="flex items-center gap-2 mb-3">
                         <div class="text-lg md:text-xl font-black text-brand-dark">$XXX.00</div>
                     </div>
-                    <button class="w-full bg-gray-50 text-brand-dark border border-gray-200 hover:bg-brand-accent hover:text-white hover:border-brand-accent text-sm font-bold py-2.5 rounded-xl transition-colors">
+                    <button class="w-full bg-gray-900 text-white hover:bg-brand-accent text-sm font-bold py-2.5 rounded-xl transition-colors">
                         Agregar
                     </button>
                 </div>
@@ -211,8 +206,8 @@
     </nav>
 
     <!-- フッター -->
-    <footer class="bg-gray-100 mt-12 pb-16 md:pb-0">
-        <div class="max-w-7xl mx-auto px-4 py-12 text-center text-gray-500 text-sm">
+    <footer class="bg-gray-900 text-gray-400 mt-12 pb-16 md:pb-0">
+        <div class="max-w-7xl mx-auto px-4 py-12 text-center text-sm">
             <p>&copy; 2026 Demo Autopartes. Todos los derechos reservados.</p>
         </div>
     </footer>
