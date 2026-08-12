@@ -1,289 +1,355 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Demo Autopartes | Catálogo de Productos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Inter', 'sans-serif'] },
-                    colors: {
-                        brand: { accent: '#2563EB', dark: '#0F172A', light: '#F8FAFC' }
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        body { padding-bottom: 70px; }
-        @media (min-width: 768px) { body { padding-bottom: 0; } }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="robots" content="noindex, nofollow">
+<title>Autopartes Johnny's | Catálogo de Refacciones</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ['Inter','sans-serif'],
+        display: ['Oswald','sans-serif'],
+        mono: ['"Space Mono"','monospace']
+      },
+      colors: {
+        ink: '#12142B',
+        blue: { DEFAULT:'#2437B0', dark:'#182877' },
+        pink: { DEFAULT:'#EC1567', dark:'#B80F52' },
+        bg: '#F5F5F4',
+        steel: '#565B72'
+      },
+      boxShadow: { float:'0 20px 40px -12px rgba(18,20,43,0.18)' }
+    }
+  }
+}
+</script>
+<style>
+  .hide-scrollbar::-webkit-scrollbar{display:none} .hide-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
+  body{padding-bottom:66px}
+  @media (min-width:768px){ body{padding-bottom:0} }
+  .ribbon{clip-path:polygon(0 0,100% 0,100% 70%,50% 100%,0 70%)}
+</style>
 </head>
-<body class="bg-brand-light text-gray-900 antialiased">
+<body class="bg-bg text-ink font-sans antialiased selection:bg-pink selection:text-white">
 
-    <!-- トップユーティリティバー (index.htmlと共通) -->
-    <div class="bg-brand-dark text-gray-300 text-xs py-2 px-4 hidden md:block">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="flex items-center gap-6">
-                <span>📍 Envío a todo México o Recoge en Tienda</span>
-                <span>📞 Soporte y Ventas Online</span>
-            </div>
-            <div class="flex items-center gap-4">
-                <a href="index.html#sucursales" class="hover:text-white transition">Sucursales</a>
-                <a href="index.html#contacto" class="hover:text-white transition">Contacto</a>
-            </div>
+<!-- Utility bar -->
+<div class="bg-ink text-gray-300 text-xs py-2 px-4 hidden md:block">
+  <div class="max-w-7xl mx-auto flex justify-between items-center font-medium tracking-wide">
+    <div class="flex items-center gap-4">
+      <span class="text-pink font-black">///</span>
+      <span>Envíos a todo México con garantía de entrega</span>
+    </div>
+    <div class="flex items-center gap-6">
+      <a href="sucursales.html" class="hover:text-white transition-colors">Sucursales</a>
+      <a href="sucursales.html#contacto" class="hover:text-white transition-colors">Soporte</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="bg-white border-b border-gray-200 sticky top-0 z-50">
+  <div class="max-w-7xl mx-auto px-4 py-3 md:py-4 flex justify-between items-center gap-4 md:gap-8">
+    <a href="index.html" class="block shrink-0">
+      <img src="images/logo.webp" alt="Autopartes Johnny's" class="h-10 md:h-12 w-auto object-contain">
+    </a>
+    <div class="hidden md:flex flex-1 max-w-xl relative">
+      <input type="text" placeholder="Busca por pieza, marca, modelo..." class="w-full bg-gray-100 text-ink font-medium placeholder-gray-500 rounded-l-lg py-3 pl-4 pr-4 focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue border border-transparent focus:border-blue transition-all">
+      <button class="bg-blue text-white px-6 rounded-r-lg hover:bg-blue-dark transition-colors flex items-center justify-center">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+      </button>
+    </div>
+    <div class="flex items-center gap-4 md:gap-6">
+      <button class="text-sm font-bold text-steel hidden md:block hover:text-pink transition-colors">Iniciar Sesión</button>
+      <div class="relative cursor-pointer group flex items-center justify-center w-11 h-11 md:w-12 md:h-12 bg-gray-50 rounded-full border border-gray-200 hover:border-pink transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-ink group-hover:text-pink transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+        </svg>
+        <span class="absolute -top-1 -right-1 bg-pink text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white">2</span>
+      </div>
+    </div>
+  </div>
+  <nav class="hidden md:block border-t border-gray-100 bg-white">
+    <div class="max-w-7xl mx-auto px-4 flex items-center gap-8 text-sm font-bold uppercase tracking-wide text-steel">
+      <a href="index.html" class="py-3 hover:text-ink transition-colors">Inicio</a>
+      <a href="products.html" class="py-3 text-pink border-b-2 border-pink">Catálogo</a>
+      <a href="products.html" class="py-3 hover:text-ink transition-colors">Ofertas</a>
+      <a href="sucursales.html" class="py-3 hover:text-ink transition-colors">Sucursales</a>
+      <a href="sucursales.html#contacto" class="py-3 hover:text-ink transition-colors">Contacto</a>
+    </div>
+  </nav>
+  <div class="md:hidden px-4 pb-3">
+    <div class="flex w-full">
+      <input type="text" placeholder="Buscar refacciones..." class="w-full bg-gray-100 text-ink rounded-l-lg py-2.5 pl-4 focus:outline-none border-y border-l border-gray-200">
+      <button class="bg-blue text-white px-4 rounded-r-lg flex items-center justify-center">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 py-6 md:py-8">
+
+  <div class="mb-6 md:mb-8">
+    <nav class="flex text-xs text-steel gap-1.5 mb-2.5">
+      <a href="index.html" class="hover:text-pink">Inicio</a>
+      <span>/</span>
+      <span class="text-ink font-medium">Todos los Productos</span>
+    </nav>
+    <h1 class="text-2xl md:text-4xl font-display font-semibold text-ink uppercase">Catálogo de Refacciones</h1>
+    <p class="text-steel text-sm mt-1">Explora nuestra selección de piezas de alta calidad y aceites de grado O.E.M.</p>
+  </div>
+
+  <div class="flex flex-col md:flex-row gap-8">
+
+    <!-- Sidebar filters -->
+    <aside class="w-full md:w-64 shrink-0 hidden md:block">
+      <div class="sticky top-32 space-y-6">
+        <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+          <h3 class="font-bold text-sm mb-3.5 text-ink">Categorías</h3>
+          <ul class="space-y-2 text-sm text-steel">
+            <li><a href="#" class="font-semibold text-pink flex justify-between items-center bg-pink/5 px-2 py-1 rounded-md -mx-2">Todas <span>(10)</span></a></li>
+            <li><a href="#" class="hover:text-pink flex justify-between items-center">Motor <span>(4)</span></a></li>
+            <li><a href="#" class="hover:text-pink flex justify-between items-center">Eléctrico <span>(2)</span></a></li>
+            <li><a href="#" class="hover:text-pink flex justify-between items-center">Aceites y Lubricantes <span>(4)</span></a></li>
+          </ul>
         </div>
+        <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
+          <h3 class="font-bold text-sm mb-3.5 text-ink">Marca del Auto</h3>
+          <div class="space-y-2">
+            <label class="flex items-center text-sm text-steel"><input type="checkbox" class="rounded border-gray-300 text-pink mr-2" checked> Toyota</label>
+            <label class="flex items-center text-sm text-steel"><input type="checkbox" class="rounded border-gray-300 text-pink mr-2"> Nissan</label>
+            <label class="flex items-center text-sm text-steel"><input type="checkbox" class="rounded border-gray-300 text-pink mr-2"> Chevrolet</label>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <div class="md:hidden flex justify-between items-center gap-3 mb-4">
+      <button class="flex-1 bg-white border border-gray-200 text-sm py-2.5 rounded-xl font-semibold text-steel">Filtrar (1)</button>
+      <select class="flex-1 bg-white border border-gray-200 text-sm py-2.5 rounded-xl font-semibold text-steel px-3">
+        <option>Ordenar: Relevancia</option>
+      </select>
     </div>
 
-    <!-- メインヘッダー (index.htmlと共通) -->
-    <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100 transition-all">
-        <div class="max-w-7xl mx-auto px-4 py-2.5 md:py-4 flex justify-between items-center gap-4">
-            <a href="index.html" class="block shrink-0 hover:opacity-90 transition-opacity">
-                <img src="logo.webp" alt="Autopartes" class="h-10 md:h-16 w-auto object-contain">
-            </a>
-            <div class="hidden md:flex flex-1 max-w-xl mx-4 relative">
-                <input type="text" placeholder="Busca por pieza, marca..." class="w-full bg-gray-100 rounded-full py-2.5 pl-5 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent/50 transition">
-                <svg class="w-5 h-5 text-gray-400 absolute right-4 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
-            </div>
-            <div class="flex items-center gap-3">
-                <button class="text-sm font-semibold text-gray-700 hidden md:block hover:text-brand-accent transition">Mi Cuenta</button>
-                <div class="relative cursor-pointer group">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-7 md:w-7 text-gray-800 group-hover:text-brand-accent transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                    <span class="absolute -top-1 -right-2 bg-brand-accent text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-white">2</span>
-                </div>
-            </div>
-        </div>
-        <div class="md:hidden px-4 pb-2.5">
-            <input type="text" placeholder="Buscar refacciones..." class="w-full bg-gray-100 rounded-full py-2 pl-4 text-xs focus:outline-none focus:ring-2 focus:ring-brand-accent/50">
-        </div>
-    </header>
+    <div class="flex-1">
+      <div class="hidden md:flex justify-between items-center mb-5">
+        <p class="text-sm text-steel">Mostrando <span class="font-bold text-ink">10</span> resultados</p>
+        <select class="bg-white border border-gray-200 text-sm py-2 rounded-xl font-semibold text-steel px-3">
+          <option>Ordenar: Relevancia</option>
+          <option>Precio: menor a mayor</option>
+          <option>Precio: mayor a menor</option>
+        </select>
+      </div>
 
-    <!-- メインコンテンツ: 商品一覧 -->
-    <main class="max-w-7xl mx-auto px-4 py-6 md:py-8">
-        
-        <!-- パンくずリスト & タイトル -->
-        <div class="mb-6 md:mb-8">
-            <nav class="flex text-xs text-gray-500 gap-1.5 mb-2.5">
-                <a href="index.html" class="hover:text-brand-accent">Inicio</a>
-                <span>/</span>
-                <span class="text-gray-900 font-medium">Todos los Productos</span>
-            </nav>
-            <h1 class="text-2xl md:text-3xl font-black text-brand-dark">Catálogo de Refacciones</h1>
-            <p class="text-gray-600 text-sm mt-1">Explora nuestra amplia selección de piezas de alta calidad.</p>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-6">
+
+        <!-- 1 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+          <a href="product-detail.html" class="absolute inset-0 z-10"></a>
+          <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3 relative">
+            <div class="absolute top-2 left-2 bg-ink text-white text-[9px] font-bold px-1.5 py-0.5 rounded uppercase tracking-wider">En Stock</div>
+            <img src="images/sample3.webp" alt="Alternador" class="w-full h-full object-contain mix-blend-multiply group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-3 md:p-4 flex flex-col flex-1">
+            <span class="text-[9px] md:text-[10px] text-steel uppercase font-semibold font-mono">Eléctrico · REF. ALT-2210</span>
+            <h3 class="text-xs md:text-sm font-medium text-ink leading-tight my-2 flex-1 line-clamp-2">Alternador Automotriz Alta Durabilidad</h3>
+            <div class="text-base md:text-lg font-display font-semibold text-ink mb-2.5">$1,450.00</div>
+            <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+          </div>
         </div>
 
-        <div class="flex flex-col md:flex-row gap-8">
-            
-            <!-- サイドバーフィルター (PC) -->
-            <aside class="w-full md:w-64 shrink-0 hidden md:block">
-                <div class="sticky top-28 space-y-6">
-                    <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
-                        <h3 class="font-bold text-sm mb-3.5">Categorías</h3>
-                        <ul class="space-y-2 text-sm text-gray-700">
-                            <li><a href="#" class="hover:text-brand-accent flex justify-between items-center">Accesorios <span>(120)</span></a></li>
-                            <li><a href="#" class="font-semibold text-brand-accent flex justify-between items-center bg-blue-50 px-2 py-1 rounded-md -mx-2">Aditivos <span>(45)</span></a></li>
-                            <li><a href="#" class="hover:text-brand-accent flex justify-between items-center">Eléctrico <span>(88)</span></a></li>
-                            <li><a href="#" class="hover:text-brand-accent flex justify-between items-center">Motor <span>(150)</span></a></li>
-                            <li><a href="#" class="hover:text-brand-accent flex justify-between items-center">Frenos <span>(75)</span></a></li>
-                        </ul>
-                    </div>
-                    <div class="bg-white p-5 rounded-2xl border border-gray-100 shadow-sm">
-                        <h3 class="font-bold text-sm mb-3.5">Marca del Auto</h3>
-                        <div class="space-y-2">
-                            <label class="flex items-center text-sm"><input type="checkbox" class="rounded border-gray-300 text-brand-accent mr-2" checked> Nissan</label>
-                            <label class="flex items-center text-sm"><input type="checkbox" class="rounded border-gray-300 text-brand-accent mr-2"> Toyota</label>
-                            <label class="flex items-center text-sm"><input type="checkbox" class="rounded border-gray-300 text-brand-accent mr-2"> Chevrolet</label>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-
-            <!-- SP向けフィルターボタン -->
-            <div class="md:hidden flex justify-between items-center gap-3 mb-4">
-                <button class="flex-1 bg-white border border-gray-200 text-sm py-2.5 rounded-xl font-semibold text-gray-700">
-                    Filtrar (2)
-                </button>
-                <button class="flex-1 bg-white border border-gray-200 text-sm py-2.5 rounded-xl font-semibold text-gray-700">
-                    Ordenar por
-                </button>
-            </div>
-
-            <!-- 商品グリッド (WebP画像を反映。sample3〜8を使用) -->
-            <div class="flex-1">
-                <div class="grid grid-cols-2 lg:grid-cols-3 gap-3 md:gap-5">
-                    
-                    <!-- 商品1 (オルタネーター: sample3.webp) -->
-                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
-                        <a href="product-detail.html" class="absolute inset-0 z-10"></a>
-                        <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3">
-                            <img src="sample3.webp" alt="Alternador" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
-                        </div>
-                        <div class="p-3 md:p-4 flex flex-col flex-1">
-                            <span class="text-[9px] md:text-[10px] text-gray-500 uppercase font-semibold">Eléctrico</span>
-                            <h3 class="text-xs md:text-sm font-medium text-gray-800 leading-tight mb-2 flex-1 line-clamp-2">Alternador Automotriz Alta Durabilidad</h3>
-                            <div class="text-base md:text-lg font-black text-brand-dark mb-2.5">$1,450.00</div>
-                            <button class="w-full bg-gray-900 text-white hover:bg-brand-accent text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">
-                                Agregar
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- 商品2 (オイル: sample4.webp) -->
-                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
-                        <a href="#" class="absolute inset-0 z-10"></a>
-                        <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3 relative">
-                            <div class="absolute top-2 left-2 bg-blue-600 text-white text-[8px] md:text-[9px] font-bold px-1.5 py-0.5 rounded">Envío Gratis</div>
-                            <img src="sample4.webp" alt="Aceite Sintético" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
-                        </div>
-                        <div class="p-3 md:p-4 flex flex-col flex-1">
-                            <span class="text-[9px] md:text-[10px] text-gray-500 uppercase font-semibold">Aditivos</span>
-                            <h3 class="text-xs md:text-sm font-medium text-gray-800 leading-tight mb-2 flex-1 line-clamp-2">Aceite Synth-Etec Full Synthetic 5W-30</h3>
-                            <div class="text-base md:text-lg font-black text-brand-dark mb-2.5">$280.00</div>
-                            <button class="w-full bg-gray-900 text-white hover:bg-brand-accent text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">
-                                Agregar
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- 商品3 (コイル: sample5.webp) -->
-                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
-                        <a href="#" class="absolute inset-0 z-10"></a>
-                        <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3">
-                            <img src="sample5.webp" alt="Bobina" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
-                        </div>
-                        <div class="p-3 md:p-4 flex flex-col flex-1">
-                            <span class="text-[9px] md:text-[10px] text-gray-500 uppercase font-semibold">Eléctrico</span>
-                            <h3 class="text-xs md:text-sm font-medium text-gray-800 leading-tight mb-2 flex-1 line-clamp-2">Bobina de Encendido Premium</h3>
-                            <div class="text-base md:text-lg font-black text-brand-dark mb-2.5">$650.00</div>
-                            <button class="w-full bg-gray-900 text-white hover:bg-brand-accent text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">
-                                Agregar
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- 商品4 (スロットル: sample6.webp) -->
-                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
-                        <a href="#" class="absolute inset-0 z-10"></a>
-                        <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3 relative">
-                            <div class="absolute top-2 right-2 bg-red-600 text-white text-[8px] md:text-[9px] font-bold px-1.5 py-0.5 rounded">Oferta</div>
-                            <img src="sample6.webp" alt="Cuerpo Aceleración" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
-                        </div>
-                        <div class="p-3 md:p-4 flex flex-col flex-1">
-                            <span class="text-[9px] md:text-[10px] text-gray-500 uppercase font-semibold">Motor</span>
-                            <h3 class="text-xs md:text-sm font-medium text-gray-800 leading-tight mb-2 flex-1 line-clamp-2">Cuerpo de Aceleración Electrónico</h3>
-                            <div class="text-base md:text-lg font-black text-brand-dark mb-2.5">$2,100.00</div>
-                            <button class="w-full bg-gray-900 text-white hover:bg-brand-accent text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">
-                                Agregar
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- 商品5 ( sample7.webp ) -->
-                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
-                        <a href="#" class="absolute inset-0 z-10"></a>
-                        <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3">
-                            <img src="sample7.webp" alt="Producto 5" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
-                        </div>
-                        <div class="p-3 md:p-4 flex flex-col flex-1">
-                            <span class="text-[9px] md:text-[10px] text-gray-500 uppercase font-semibold">Categoría</span>
-                            <h3 class="text-xs md:text-sm font-medium text-gray-800 leading-tight mb-2 flex-1 line-clamp-2">Refacción de Suspensión Modelo X</h3>
-                            <div class="text-base md:text-lg font-black text-brand-dark mb-2.5">$980.00</div>
-                            <button class="w-full bg-gray-900 text-white hover:bg-brand-accent text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">
-                                Agregar
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- 商品6 ( sample8.webp ) -->
-                    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
-                        <a href="#" class="absolute inset-0 z-10"></a>
-                        <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3">
-                            <img src="sample8.webp" alt="Producto 6" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
-                        </div>
-                        <div class="p-3 md:p-4 flex flex-col flex-1">
-                            <span class="text-[9px] md:text-[10px] text-gray-500 uppercase font-semibold">Categoría</span>
-                            <h3 class="text-xs md:text-sm font-medium text-gray-800 leading-tight mb-2 flex-1 line-clamp-2">Bomba de Agua para Motor L4</h3>
-                            <div class="text-base md:text-lg font-black text-brand-dark mb-2.5">$1,200.00</div>
-                            <button class="w-full bg-gray-900 text-white hover:bg-brand-accent text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">
-                                Agregar
-                            </button>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- ページネーション -->
-                <div class="mt-8 md:mt-10 flex justify-center gap-2">
-                    <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-400">←</button>
-                    <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-brand-accent text-white font-bold">1</button>
-                    <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-700 hover:bg-gray-50">2</button>
-                    <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-700 hover:bg-gray-50">3</button>
-                    <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-700 hover:bg-gray-50">→</button>
-                </div>
-            </div>
+        <!-- 2 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+          <a href="product-detail.html" class="absolute inset-0 z-10"></a>
+          <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3 relative">
+            <div class="absolute top-0 left-2 bg-pink text-white text-[8px] md:text-[9px] font-bold px-1.5 py-0.5 rounded-b uppercase tracking-wider">Oferta</div>
+            <img src="images/sample4.webp" alt="Aceite Synth-Etec 5W-30 1L" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-3 md:p-4 flex flex-col flex-1">
+            <span class="text-[9px] md:text-[10px] text-steel uppercase font-semibold font-mono">Aceites · REF. OIL-5W30-1L</span>
+            <h3 class="text-xs md:text-sm font-medium text-ink leading-tight my-2 flex-1 line-clamp-2">Aceite Synth-Etec Full Synthetic 5W-30 1L</h3>
+            <div class="text-base md:text-lg font-display font-semibold text-ink mb-2.5">$280.00</div>
+            <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+          </div>
         </div>
-    </main>
 
-    <!-- SP向けボトムナビゲーション (index.htmlと共通。Catをアクティブに) -->
-    <nav class="md:hidden fixed bottom-0 w-full bg-white border-t border-gray-200 z-50 flex justify-around items-center pb-safe pt-2 px-2 pb-2">
-        <a href="index.html" class="flex flex-col items-center gap-1 p-2 text-gray-400">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-            <span class="text-[10px] font-medium">Inicio</span>
-        </a>
-        <a href="products.html" class="flex flex-col items-center gap-1 p-2 text-brand-accent">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
-            <span class="text-[10px] font-medium">Categorías</span>
-        </a>
-        <a href="#" class="flex flex-col items-center gap-1 p-2 text-gray-400 relative">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-            <span class="absolute top-1 right-2 bg-brand-accent text-white text-[9px] font-bold px-1.5 rounded-full">2</span>
-            <span class="text-[10px] font-medium">Carrito</span>
-        </a>
-        <a href="#" class="flex flex-col items-center gap-1 p-2 text-gray-400">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
-            <span class="text-[10px] font-medium">Perfil</span>
-        </a>
-    </nav>
+        <!-- 3 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+          <a href="product-detail.html" class="absolute inset-0 z-10"></a>
+          <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3">
+            <img src="images/sample5.webp" alt="Bobina de Encendido" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-3 md:p-4 flex flex-col flex-1">
+            <span class="text-[9px] md:text-[10px] text-steel uppercase font-semibold font-mono">Eléctrico · REF. IGN-880</span>
+            <h3 class="text-xs md:text-sm font-medium text-ink leading-tight my-2 flex-1 line-clamp-2">Bobina de Encendido Pro 4 Pines</h3>
+            <div class="text-base md:text-lg font-display font-semibold text-ink mb-2.5">$650.00</div>
+            <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+          </div>
+        </div>
 
-    <!-- フッター (index.htmlと共通) -->
-    <footer id="contacto" class="bg-gray-900 text-gray-400 mt-12 pb-16 md:pb-0 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
-            <div>
-                <h4 class="text-white font-bold mb-3">Autopartes Demo</h4>
-                <p class="text-xs text-gray-400 mb-4">Tu refaccionaria de confianza.</p>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-3">Navegación</h4>
-                <ul class="space-y-2 text-xs">
-                    <li><a href="index.html" class="hover:text-white transition">Inicio</a></li>
-                    <li><a href="products.html" class="hover:text-white transition">Catalogo</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-3">Soporte</h4>
-                <ul class="space-y-2 text-xs">
-                    <li><a href="#" class="hover:text-white transition">FAQ</a></li>
-                    <li><a href="#" class="hover:text-white transition">Contacto</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4 class="text-white font-bold mb-3">Contacto</h4>
-                <p class="text-xs text-gray-400">Atención vía WhatsApp</p>
-            </div>
+        <!-- 4 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+          <a href="product-detail.html" class="absolute inset-0 z-10"></a>
+          <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3 relative">
+            <div class="absolute top-0 left-2 bg-pink text-white text-[8px] md:text-[9px] font-bold px-1.5 py-0.5 rounded-b uppercase tracking-wider">Oferta</div>
+            <img src="images/sample6.webp" alt="Cuerpo de Aceleración" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-3 md:p-4 flex flex-col flex-1">
+            <span class="text-[9px] md:text-[10px] text-steel uppercase font-semibold font-mono">Motor · REF. THR-410</span>
+            <h3 class="text-xs md:text-sm font-medium text-ink leading-tight my-2 flex-1 line-clamp-2">Cuerpo de Aceleración Electrónico O.E.M.</h3>
+            <div class="text-base md:text-lg font-display font-semibold text-ink mb-2.5">$2,100.00</div>
+            <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+          </div>
         </div>
-        <div class="border-t border-gray-800 py-6 text-center text-xs text-gray-500">
-            <p>&copy; 2026 Demo Autopartes. Todos los derechos reservados.</p>
+
+        <!-- 5 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+          <a href="product-detail.html" class="absolute inset-0 z-10"></a>
+          <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3">
+            <img src="images/sample7.webp" alt="Aceite Ultra-Performance 5W-40 5L" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-3 md:p-4 flex flex-col flex-1">
+            <span class="text-[9px] md:text-[10px] text-steel uppercase font-semibold font-mono">Aceites · REF. OIL-5W40-5L</span>
+            <h3 class="text-xs md:text-sm font-medium text-ink leading-tight my-2 flex-1 line-clamp-2">Aceite Synth-Etec Ultra-Performance 5W-40 5L</h3>
+            <div class="text-base md:text-lg font-display font-semibold text-ink mb-2.5">$980.00</div>
+            <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+          </div>
         </div>
-    </footer>
+
+        <!-- 6 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+          <a href="product-detail.html" class="absolute inset-0 z-10"></a>
+          <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3">
+            <img src="images/sample8.webp" alt="Sensor MAF" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-3 md:p-4 flex flex-col flex-1">
+            <span class="text-[9px] md:text-[10px] text-steel uppercase font-semibold font-mono">Motor · REF. MAF-105</span>
+            <h3 class="text-xs md:text-sm font-medium text-ink leading-tight my-2 flex-1 line-clamp-2">Sensor de Flujo de Masa de Aire (MAF)</h3>
+            <div class="text-base md:text-lg font-display font-semibold text-ink mb-2.5">$1,150.00</div>
+            <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+          <a href="product-detail.html" class="absolute inset-0 z-10"></a>
+          <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3">
+            <img src="images/sample10.webp" alt="Aceite 0W-30 5L" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-3 md:p-4 flex flex-col flex-1">
+            <span class="text-[9px] md:text-[10px] text-steel uppercase font-semibold font-mono">Aceites · REF. OIL-0W30-5L</span>
+            <h3 class="text-xs md:text-sm font-medium text-ink leading-tight my-2 flex-1 line-clamp-2">Aceite Synth-Etec Full Synthetic 0W-30 5L</h3>
+            <div class="text-base md:text-lg font-display font-semibold text-ink mb-2.5">$920.00</div>
+            <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+          <a href="product-detail.html" class="absolute inset-0 z-10"></a>
+          <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3">
+            <img src="images/sample11.webp" alt="Aceite 5W-40 5L" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-3 md:p-4 flex flex-col flex-1">
+            <span class="text-[9px] md:text-[10px] text-steel uppercase font-semibold font-mono">Aceites · REF. OIL-5W40-SE5L</span>
+            <h3 class="text-xs md:text-sm font-medium text-ink leading-tight my-2 flex-1 line-clamp-2">Aceite Synth-Etec Full Synthetic 5W-40 5L</h3>
+            <div class="text-base md:text-lg font-display font-semibold text-ink mb-2.5">$950.00</div>
+            <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+          <a href="product-detail.html" class="absolute inset-0 z-10"></a>
+          <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3">
+            <img src="images/sample12.webp" alt="Aceite 0W-30 5L edición" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-3 md:p-4 flex flex-col flex-1">
+            <span class="text-[9px] md:text-[10px] text-steel uppercase font-semibold font-mono">Aceites · REF. OIL-0W30-P5L</span>
+            <h3 class="text-xs md:text-sm font-medium text-ink leading-tight my-2 flex-1 line-clamp-2">Aceite Synth-Etec 0W-30 5L Edición Premium</h3>
+            <div class="text-base md:text-lg font-display font-semibold text-ink mb-2.5">$940.00</div>
+            <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+          <a href="product-detail.html" class="absolute inset-0 z-10"></a>
+          <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3">
+            <img src="images/sample13.webp" alt="Inyector de combustible" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+          </div>
+          <div class="p-3 md:p-4 flex flex-col flex-1">
+            <span class="text-[9px] md:text-[10px] text-steel uppercase font-semibold font-mono">Motor · REF. INJ-3021</span>
+            <h3 class="text-xs md:text-sm font-medium text-ink leading-tight my-2 flex-1 line-clamp-2">Inyector de Combustible de Alta Precisión</h3>
+            <div class="text-base md:text-lg font-display font-semibold text-ink mb-2.5">$1,320.00</div>
+            <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-8 md:mt-10 flex justify-center gap-2">
+        <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-gray-300">←</button>
+        <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-pink text-white font-bold">1</button>
+        <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-steel hover:bg-gray-50">2</button>
+        <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-steel hover:bg-gray-50">3</button>
+        <button class="w-10 h-10 flex items-center justify-center rounded-lg bg-white border border-gray-200 text-steel hover:bg-gray-50">→</button>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Mobile bottom nav -->
+<nav class="md:hidden fixed bottom-0 w-full bg-white border-t border-gray-200 z-50 flex justify-around items-center pt-2 px-2 pb-2 shadow-[0_-5px_15px_rgba(0,0,0,0.05)]">
+  <a href="index.html" class="flex flex-col items-center gap-1 p-2 text-steel hover:text-ink transition-colors">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+    <span class="text-[9px] font-bold">INICIO</span>
+  </a>
+  <a href="products.html" class="flex flex-col items-center gap-1 p-2 text-pink">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+    <span class="text-[9px] font-bold">CATÁLOGO</span>
+  </a>
+  <a href="sucursales.html" class="flex flex-col items-center gap-1 p-2 text-steel hover:text-ink transition-colors">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+    <span class="text-[9px] font-bold">SUCURSALES</span>
+  </a>
+  <a href="#" class="flex flex-col items-center gap-1 p-2 text-steel hover:text-ink relative transition-colors">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
+    <span class="absolute top-1 right-2 bg-pink text-white text-[9px] font-bold h-4 w-4 flex items-center justify-center rounded-full border border-white">2</span>
+    <span class="text-[9px] font-bold">CARRITO</span>
+  </a>
+</nav>
+
+<!-- Footer -->
+<footer id="contacto" class="bg-ink text-gray-400 mt-12 pb-20 md:pb-0">
+  <div class="max-w-7xl mx-auto px-4 py-16 grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
+    <div class="col-span-1 md:col-span-2">
+      <img src="images/logo.webp" alt="Autopartes Johnny's" class="h-10 mb-6 brightness-0 invert opacity-90">
+      <p class="text-sm text-gray-400 font-medium leading-relaxed max-w-sm">Alta precisión y desempeño para tu vehículo. Tu refaccionaria de confianza con envíos seguros a todo México y 3 sucursales físicas.</p>
+    </div>
+    <div>
+      <h4 class="text-white font-bold mb-6 tracking-wider text-xs uppercase">Links Rápidos</h4>
+      <ul class="space-y-3 text-sm font-medium">
+        <li><a href="index.html" class="hover:text-white transition-colors">Inicio</a></li>
+        <li><a href="products.html" class="hover:text-white transition-colors">Catálogo Completo</a></li>
+        <li><a href="sucursales.html" class="hover:text-white transition-colors">Sucursales</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 class="text-white font-bold mb-6 tracking-wider text-xs uppercase">Contacto</h4>
+      <a href="https://wa.me/527220000000" class="inline-flex items-center gap-2 bg-pink hover:bg-pink-dark text-white text-sm font-bold px-6 py-3 rounded-lg transition-colors">Soporte WhatsApp</a>
+    </div>
+  </div>
+  <div class="border-t border-gray-800 py-6 text-center text-xs text-gray-500 font-medium">
+    <p>&copy; 2026 Autopartes Johnny's. Todos los derechos reservados. · Sitio de demostración</p>
+  </div>
+</footer>
 
 </body>
 </html>
