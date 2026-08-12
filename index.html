@@ -32,7 +32,7 @@
 </head>
 <body class="bg-brand-light text-gray-900 antialiased">
 
-    <!-- トップユーティリティバー (競合参考: 所在地・サポート・配送情報) -->
+    <!-- トップユーティリティバー (PCのみ) -->
     <div class="bg-brand-dark text-gray-300 text-xs py-2 px-4 hidden md:block">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-6">
@@ -46,12 +46,12 @@
         </div>
     </div>
 
-    <!-- メインヘッダー -->
+    <!-- メインヘッダー (SP時は高さをコンパクトに調整) -->
     <header class="bg-white/95 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100 transition-all">
-        <div class="max-w-7xl mx-auto px-4 py-3 md:py-4 flex justify-between items-center gap-4">
+        <div class="max-w-7xl mx-auto px-4 py-2.5 md:py-4 flex justify-between items-center gap-4">
             
             <a href="#" class="block shrink-0 hover:opacity-90 transition-opacity">
-                <img src="logo.png" alt="Autopartes" class="h-12 md:h-16 w-auto object-contain">
+                <img src="logo.png" alt="Autopartes" class="h-10 md:h-16 w-auto object-contain">
             </a>
 
             <!-- 検索バー -->
@@ -60,135 +60,138 @@
                 <svg class="w-5 h-5 text-gray-400 absolute right-4 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
             </div>
             
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-3">
                 <button class="text-sm font-semibold text-gray-700 hidden md:block hover:text-brand-accent transition">Mi Cuenta</button>
                 <div class="relative cursor-pointer group">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-800 group-hover:text-brand-accent transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 md:h-7 md:w-7 text-gray-800 group-hover:text-brand-accent transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
                     <span class="absolute -top-1 -right-2 bg-brand-accent text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-white">2</span>
                 </div>
             </div>
         </div>
-        <div class="md:hidden px-4 pb-3">
-            <input type="text" placeholder="Buscar refacciones..." class="w-full bg-gray-100 rounded-full py-2 pl-4 text-sm focus:outline-none focus:ring-2 focus:ring-brand-accent/50">
+        <!-- SP向け検索バー -->
+        <div class="md:hidden px-4 pb-2.5">
+            <input type="text" placeholder="Buscar refacciones..." class="w-full bg-gray-100 rounded-full py-2 pl-4 text-xs focus:outline-none focus:ring-2 focus:ring-brand-accent/50">
         </div>
     </header>
 
-    <!-- 【新機能】車種パーツ検索フィルター (競合サイトの必須機能を実装) -->
-    <section class="bg-gray-900 text-white py-4 border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-xs font-bold text-gray-400 mb-2 uppercase tracking-wider">🔧 Selecciona tu vehículo para una búsqueda precisa</div>
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
-                <select class="bg-gray-800 text-sm text-gray-200 rounded-xl p-2.5 border border-gray-700 focus:outline-none focus:border-brand-accent">
-                    <option>1. Marca (Año/Nissan...)</option>
+    <!-- プロモーションバナーエリア (スマホでも真っ先に目に入るようトップへ移動) -->
+    <section class="max-w-7xl mx-auto px-4 py-3 md:py-4">
+        <div class="relative rounded-2xl md:rounded-3xl overflow-hidden shadow-xl text-white min-h-[300px] md:min-h-[420px] flex items-center bg-gray-950">
+            <div class="absolute inset-0 z-0">
+                <img src="banner-product.png" alt="Promoción" class="w-full h-full object-cover object-center opacity-85">
+                <div class="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/70 to-transparent md:w-3/4"></div>
+            </div>
+            
+            <div class="relative z-10 w-full max-w-3xl p-5 md:p-12">
+                <span class="inline-block bg-brand-accent text-white text-[10px] md:text-xs font-black px-3 py-1 rounded-full mb-3 uppercase tracking-wider shadow-md">
+                    Gran Promoción
+                </span>
+                <h1 class="text-xl md:text-5xl font-black mb-2 md:mb-3 leading-tight tracking-tight drop-shadow-lg">
+                    ACEITE Y BATERÍAS AL MEJOR PRECIO
+                </h1>
+                <p class="text-gray-300 mb-4 md:mb-6 text-xs md:text-base font-medium max-w-lg drop-shadow">
+                    Encuentra la potencia y protección ideal para tu auto con marcas líderes y garantía total.
+                </p>
+                <button class="bg-brand-accent text-white hover:bg-blue-700 font-extrabold py-2.5 px-6 md:py-3.5 md:px-8 rounded-xl shadow-lg text-xs md:text-base transition-transform duration-300 hover:scale-105">
+                    COMPRA AQUÍ →
+                </button>
+            </div>
+
+            <div class="absolute bottom-3 left-0 right-0 flex justify-center gap-1.5 z-10">
+                <span class="w-4 md:w-6 h-1.5 md:h-2 bg-white rounded-full shadow"></span>
+                <span class="w-1.5 md:w-2 h-1.5 md:h-2 bg-white/50 rounded-full shadow"></span>
+                <span class="w-1.5 md:w-2 h-1.5 md:h-2 bg-white/50 rounded-full shadow"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 車種パーツ検索フィルター (SP時はすっきりとコンパクトに表示) -->
+    <section class="max-w-7xl mx-auto px-4 py-2">
+        <div class="bg-gray-900 text-white p-4 rounded-2xl shadow-md border border-gray-800">
+            <div class="text-[11px] font-bold text-gray-300 mb-2.5 uppercase tracking-wider flex items-center gap-1.5">
+                <span>🔧</span> Selecciona tu vehículo para una búsqueda precisa
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-2.5">
+                <select class="bg-gray-800 text-xs md:text-sm text-gray-200 rounded-xl p-2.5 border border-gray-700 focus:outline-none focus:border-brand-accent">
+                    <option>1. Marca (Nissan...)</option>
                 </select>
-                <select class="bg-gray-800 text-sm text-gray-200 rounded-xl p-2.5 border border-gray-700 focus:outline-none focus:border-brand-accent">
-                    <option>2. Modelo (Tsuru / Versa / March...)</option>
+                <select class="bg-gray-800 text-xs md:text-sm text-gray-200 rounded-xl p-2.5 border border-gray-700 focus:outline-none focus:border-brand-accent">
+                    <option>2. Modelo (Tsuru / Versa...)</option>
                 </select>
-                <select class="bg-gray-800 text-sm text-gray-200 rounded-xl p-2.5 border border-gray-700 focus:outline-none focus:border-brand-accent">
+                <select class="bg-gray-800 text-xs md:text-sm text-gray-200 rounded-xl p-2.5 border border-gray-700 focus:outline-none focus:border-brand-accent">
                     <option>3. Año</option>
                 </select>
-                <button class="bg-brand-accent hover:bg-blue-700 text-white text-sm font-bold py-2.5 rounded-xl transition shadow-md">
+                <button class="bg-brand-accent hover:bg-blue-700 text-white text-xs md:text-sm font-bold py-2.5 rounded-xl transition shadow-md">
                     Buscar Refacciones
                 </button>
             </div>
         </div>
     </section>
 
-    <!-- プロモーションバナーエリア -->
-    <section class="max-w-7xl mx-auto px-4 py-4">
-        <div class="relative rounded-3xl overflow-hidden shadow-xl text-white min-h-[380px] md:min-h-[420px] flex items-center bg-gray-950">
-            <div class="absolute inset-0 z-0">
-                <img src="banner-product.png" alt="Promoción" class="w-full h-full object-cover object-center opacity-85">
-                <div class="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/70 to-transparent md:w-3/4"></div>
-            </div>
-            
-            <div class="relative z-10 w-full max-w-3xl p-6 md:p-12">
-                <span class="inline-block bg-brand-accent text-white text-xs font-black px-3.5 py-1.5 rounded-full mb-4 uppercase tracking-wider shadow-md">
-                    Gran Promoción
-                </span>
-                <h1 class="text-2xl md:text-5xl font-black mb-3 leading-tight tracking-tight drop-shadow-lg">
-                    ACEITE Y BATERÍAS AL MEJOR PRECIO
-                </h1>
-                <p class="text-gray-300 mb-6 text-sm md:text-base font-medium max-w-lg drop-shadow">
-                    Encuentra la potencia y protección ideal para tu auto con marcas líderes y garantía total.
-                </p>
-                <button class="bg-brand-accent text-white hover:bg-blue-700 font-extrabold py-3.5 px-8 rounded-xl shadow-lg transition-transform duration-300 hover:scale-105">
-                    COMPRA AQUÍ →
-                </button>
-            </div>
-
-            <div class="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
-                <span class="w-6 h-2 bg-white rounded-full shadow"></span>
-                <span class="w-2 h-2 bg-white/50 rounded-full shadow"></span>
-                <span class="w-2 h-2 bg-white/50 rounded-full shadow"></span>
-            </div>
-        </div>
-    </section>
-
-    <!-- 【新機能】安心の保証・サービスの訴求バナー (競合サイト参考) -->
-    <section class="max-w-7xl mx-auto px-4 py-4">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-white p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
+    <!-- 安心の保証・サービスの訴求バナー -->
+    <section class="max-w-7xl mx-auto px-4 py-3">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 bg-white p-4 md:p-6 rounded-2xl shadow-sm border border-gray-100 text-center">
             <div class="flex flex-col items-center">
-                <span class="text-2xl mb-1">🛡️</span>
+                <span class="text-xl md:text-2xl mb-1">🛡️</span>
                 <h4 class="text-xs md:text-sm font-bold text-gray-800">Garantía Total</h4>
-                <p class="text-[11px] text-gray-500">En todas las refacciones</p>
+                <p class="text-[10px] md:text-[11px] text-gray-500">En todas las refacciones</p>
             </div>
             <div class="flex flex-col items-center">
-                <span class="text-2xl mb-1">📦</span>
+                <span class="text-xl md:text-2xl mb-1">📦</span>
                 <h4 class="text-xs md:text-sm font-bold text-gray-800">Envío a Domicilio</h4>
-                <p class="text-[11px] text-gray-500">A todo México</p>
+                <p class="text-[10px] md:text-[11px] text-gray-500">A todo México</p>
             </div>
             <div class="flex flex-col items-center">
-                <span class="text-2xl mb-1">💳</span>
+                <span class="text-xl md:text-2xl mb-1">💳</span>
                 <h4 class="text-xs md:text-sm font-bold text-gray-800">Pago Seguro</h4>
-                <p class="text-[11px] text-gray-500">Tarjetas y OXXO</p>
+                <p class="text-[10px] md:text-[11px] text-gray-500">Tarjetas y OXXO</p>
             </div>
             <div class="flex flex-col items-center">
-                <span class="text-2xl mb-1">💬</span>
+                <span class="text-xl md:text-2xl mb-1">💬</span>
                 <h4 class="text-xs md:text-sm font-bold text-gray-800">Asesoría Experta</h4>
-                <p class="text-[11px] text-gray-500">Vía WhatsApp</p>
+                <p class="text-[10px] md:text-[11px] text-gray-500">Vía WhatsApp</p>
             </div>
         </div>
     </section>
 
     <!-- カテゴリーセクション -->
-    <section class="max-w-7xl mx-auto px-4 py-8">
-        <h2 class="text-xl md:text-2xl font-bold text-brand-dark mb-6">Autopartes por Categoría</h2>
-        <div class="flex overflow-x-auto gap-4 pb-2 snap-x hide-scrollbar">
+    <section class="max-w-7xl mx-auto px-4 py-6">
+        <h2 class="text-lg md:text-2xl font-bold text-brand-dark mb-4">Autopartes por Categoría</h2>
+        <div class="flex overflow-x-auto gap-3 pb-2 snap-x hide-scrollbar">
             
-            <div class="snap-start shrink-0 flex flex-col items-center gap-2 cursor-pointer group">
-                <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100 group-hover:border-brand-accent group-hover:shadow-md transition-all text-gray-700 group-hover:text-brand-accent">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
+            <div class="snap-start shrink-0 flex flex-col items-center gap-1.5 cursor-pointer group">
+                <div class="w-14 h-14 md:w-20 md:h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100 group-hover:border-brand-accent group-hover:shadow-md transition-all text-gray-700 group-hover:text-brand-accent">
+                    <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/></svg>
                 </div>
                 <span class="text-[11px] md:text-xs font-semibold text-gray-600">Accesorios</span>
             </div>
 
-            <div class="snap-start shrink-0 flex flex-col items-center gap-2 cursor-pointer group">
-                <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100 group-hover:border-brand-accent group-hover:shadow-md transition-all text-gray-700 group-hover:text-brand-accent">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
+            <div class="snap-start shrink-0 flex flex-col items-center gap-1.5 cursor-pointer group">
+                <div class="w-14 h-14 md:w-20 md:h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100 group-hover:border-brand-accent group-hover:shadow-md transition-all text-gray-700 group-hover:text-brand-accent">
+                    <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"/></svg>
                 </div>
                 <span class="text-[11px] md:text-xs font-semibold text-gray-600">Aditivos</span>
             </div>
 
-            <div class="snap-start shrink-0 flex flex-col items-center gap-2 cursor-pointer group">
-                <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100 group-hover:border-brand-accent group-hover:shadow-md transition-all text-gray-700 group-hover:text-brand-accent">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+            <div class="snap-start shrink-0 flex flex-col items-center gap-1.5 cursor-pointer group">
+                <div class="w-14 h-14 md:w-20 md:h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100 group-hover:border-brand-accent group-hover:shadow-md transition-all text-gray-700 group-hover:text-brand-accent">
+                    <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
                 </div>
                 <span class="text-[11px] md:text-xs font-semibold text-gray-600">Dirección</span>
             </div>
 
-            <div class="snap-start shrink-0 flex flex-col items-center gap-2 cursor-pointer group">
-                <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100 group-hover:border-brand-accent group-hover:shadow-md transition-all text-gray-700 group-hover:text-brand-accent">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            <div class="snap-start shrink-0 flex flex-col items-center gap-1.5 cursor-pointer group">
+                <div class="w-14 h-14 md:w-20 md:h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100 group-hover:border-brand-accent group-hover:shadow-md transition-all text-gray-700 group-hover:text-brand-accent">
+                    <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
                 </div>
                 <span class="text-[11px] md:text-xs font-semibold text-gray-600">Eléctrico</span>
             </div>
 
-            <div class="snap-start shrink-0 flex flex-col items-center gap-2 cursor-pointer group">
-                <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100 group-hover:border-brand-accent group-hover:shadow-md transition-all text-gray-700 group-hover:text-brand-accent">
-                    <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+            <div class="snap-start shrink-0 flex flex-col items-center gap-1.5 cursor-pointer group">
+                <div class="w-14 h-14 md:w-20 md:h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100 group-hover:border-brand-accent group-hover:shadow-md transition-all text-gray-700 group-hover:text-brand-accent">
+                    <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
                 </div>
                 <span class="text-[11px] md:text-xs font-semibold text-gray-600">Frenos</span>
             </div>
@@ -196,51 +199,51 @@
     </section>
 
     <!-- 商品グリッド -->
-    <section class="max-w-7xl mx-auto px-4 py-6">
-        <div class="flex justify-between items-end mb-6">
-            <h2 class="text-xl md:text-2xl font-bold text-brand-dark">Ofertas Destacadas</h2>
-            <a href="#" class="text-sm font-semibold text-brand-accent hover:underline">Ver todo</a>
+    <section class="max-w-7xl mx-auto px-4 py-4">
+        <div class="flex justify-between items-end mb-4">
+            <h2 class="text-lg md:text-2xl font-bold text-brand-dark">Ofertas Destacadas</h2>
+            <a href="#" class="text-xs md:text-sm font-semibold text-brand-accent hover:underline">Ver todo</a>
         </div>
         
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
-                <div class="absolute top-2 left-2 bg-emerald-600 text-white text-[10px] font-bold px-2 py-1 rounded-md z-10">
+                <div class="absolute top-2 left-2 bg-emerald-600 text-white text-[9px] md:text-[10px] font-bold px-2 py-0.5 rounded-md z-10">
                     Llega mañana
                 </div>
-                <div class="h-36 md:h-48 bg-gray-50 flex items-center justify-center p-4 relative overflow-hidden">
+                <div class="h-32 md:h-48 bg-gray-50 flex items-center justify-center p-3 relative overflow-hidden">
                     <div class="w-full h-full border-2 border-dashed border-gray-200 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
                         <span class="text-gray-400 text-xs text-center">Imagen<br>Producto</span>
                     </div>
                 </div>
-                <div class="p-4 flex flex-col flex-1">
-                    <span class="text-[10px] text-gray-500 uppercase font-semibold mb-1">Suspensión</span>
-                    <h3 class="text-sm font-medium text-gray-800 leading-tight mb-3 flex-1 line-clamp-2">Horquilla Inferior Derecha Modelo (Ejemplo)</h3>
-                    <div class="flex items-center gap-2 mb-3">
-                        <div class="text-lg md:text-xl font-black text-brand-dark">$XXX.00</div>
-                        <div class="text-xs text-emerald-600 font-bold hidden md:block">15% OFF</div>
+                <div class="p-3 md:p-4 flex flex-col flex-1">
+                    <span class="text-[9px] md:text-[10px] text-gray-500 uppercase font-semibold mb-1">Suspensión</span>
+                    <h3 class="text-xs md:text-sm font-medium text-gray-800 leading-tight mb-2 md:mb-3 flex-1 line-clamp-2">Horquilla Inferior Derecha Modelo (Ejemplo)</h3>
+                    <div class="flex items-center gap-2 mb-2 md:mb-3">
+                        <div class="text-base md:text-xl font-black text-brand-dark">$XXX.00</div>
+                        <div class="text-[10px] md:text-xs text-emerald-600 font-bold hidden md:block">15% OFF</div>
                     </div>
-                    <button class="w-full bg-gray-900 text-white hover:bg-brand-accent text-sm font-bold py-2.5 rounded-xl transition-colors">
+                    <button class="w-full bg-gray-900 text-white hover:bg-brand-accent text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors">
                         Agregar
                     </button>
                 </div>
             </div>
 
             <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
-                <div class="absolute top-2 left-2 bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded-md z-10">
+                <div class="absolute top-2 left-2 bg-blue-600 text-white text-[9px] md:text-[10px] font-bold px-2 py-0.5 rounded-md z-10">
                     Envío Gratis
                 </div>
-                <div class="h-36 md:h-48 bg-gray-50 flex items-center justify-center p-4 relative overflow-hidden">
+                <div class="h-32 md:h-48 bg-gray-50 flex items-center justify-center p-3 relative overflow-hidden">
                     <div class="w-full h-full border-2 border-dashed border-gray-200 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
                         <span class="text-gray-400 text-xs text-center">Imagen<br>Producto</span>
                     </div>
                 </div>
-                <div class="p-4 flex flex-col flex-1">
-                    <span class="text-[10px] text-gray-500 uppercase font-semibold mb-1">Aditivos</span>
-                    <h3 class="text-sm font-medium text-gray-800 leading-tight mb-3 flex-1 line-clamp-2">Aceite Multigrado 1lt 25W-50 Alto Kilometraje</h3>
-                    <div class="flex items-center gap-2 mb-3">
-                        <div class="text-lg md:text-xl font-black text-brand-dark">$XXX.00</div>
+                <div class="p-3 md:p-4 flex flex-col flex-1">
+                    <span class="text-[9px] md:text-[10px] text-gray-500 uppercase font-semibold mb-1">Aditivos</span>
+                    <h3 class="text-xs md:text-sm font-medium text-gray-800 leading-tight mb-2 md:mb-3 flex-1 line-clamp-2">Aceite Multigrado 1lt 25W-50 Alto Kilometraje</h3>
+                    <div class="flex items-center gap-2 mb-2 md:mb-3">
+                        <div class="text-base md:text-xl font-black text-brand-dark">$XXX.00</div>
                     </div>
-                    <button class="w-full bg-gray-900 text-white hover:bg-brand-accent text-sm font-bold py-2.5 rounded-xl transition-colors">
+                    <button class="w-full bg-gray-900 text-white hover:bg-brand-accent text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors">
                         Agregar
                     </button>
                 </div>
@@ -248,20 +251,20 @@
         </div>
     </section>
 
-    <!-- 【新機能】店舗情報・アクセスセクション (競合参考: リアル店舗がある信頼感を訴求) -->
-    <section id="sucursales" class="max-w-7xl mx-auto px-4 py-8">
-        <div class="bg-gradient-to-r from-gray-900 to-gray-800 text-white p-8 rounded-3xl shadow-lg flex flex-col md:flex-row items-center justify-between gap-8">
+    <!-- 店舗情報セクション -->
+    <section id="sucursales" class="max-w-7xl mx-auto px-4 py-6">
+        <div class="bg-gradient-to-r from-gray-900 to-gray-800 text-white p-6 md:p-8 rounded-3xl shadow-lg flex flex-col md:flex-row items-center justify-between gap-6">
             <div class="flex-1">
-                <span class="bg-brand-accent text-white text-xs font-bold px-3 py-1 rounded-full uppercase">Nuestra Sucursal</span>
-                <h3 class="text-2xl md:text-3xl font-black mt-3 mb-2">Visítanos o cotiza en mostrador</h3>
-                <p class="text-gray-300 text-sm mb-4">Encuentra asesoría especializada y entrega inmediata en nuestra refaccionaria física.</p>
-                <div class="text-sm text-gray-200 space-y-1">
+                <span class="bg-brand-accent text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase">Nuestra Sucursal</span>
+                <h3 class="text-xl md:text-3xl font-black mt-2 mb-2">Visítanos o cotiza en mostrador</h3>
+                <p class="text-gray-300 text-xs md:text-sm mb-3">Encuentra asesoría especializada y entrega inmediata en nuestra refaccionaria física.</p>
+                <div class="text-xs md:text-sm text-gray-200 space-y-1">
                     <p>📍 Metepec, Estado de México</p>
                     <p>🕒 Lunes a Sábado: 8:00 AM - 7:00 PM</p>
                 </div>
             </div>
             <div class="w-full md:w-auto">
-                <a href="#contacto" class="inline-block bg-white text-gray-900 font-extrabold px-6 py-3.5 rounded-xl hover:bg-gray-100 transition shadow-md">
+                <a href="#contacto" class="block text-center bg-white text-gray-900 font-extrabold px-6 py-3.5 rounded-xl hover:bg-gray-100 transition shadow-md text-sm">
                     Contactar por WhatsApp 💬
                 </a>
             </div>
@@ -291,7 +294,7 @@
 
     <!-- フッター -->
     <footer id="contacto" class="bg-gray-900 text-gray-400 mt-12 pb-16 md:pb-0 border-t border-gray-800">
-        <div class="max-w-7xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
+        <div class="max-w-7xl mx-auto px-4 py-10 grid grid-cols-1 md:grid-cols-4 gap-8 text-sm">
             <div>
                 <h4 class="text-white font-bold mb-3">Autopartes Demo</h4>
                 <p class="text-xs text-gray-400 mb-4">Tu refaccionaria de confianza para piezas originales y genéricas con envío a todo México.</p>
