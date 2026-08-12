@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 検索エンジン避け（必須） -->
+    <meta name="robots" content="noindex, nofollow">
+    <title>Demo Autopartes | Refacciones</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { red: '#C3002F', dark: '#1A1A1A' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <!-- ヘッダー (StickyでSPでも常にナビゲーション可能に) -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-black text-brand-dark tracking-tighter">
+                DEMO <span class="text-brand-red text-lg">AUTOPARTES</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="text-sm font-semibold text-gray-600 hidden md:block">Tienda</button>
+                <button class="bg-brand-red text-white p-2 rounded-full hover:bg-red-700 transition">
+                    <!-- カートアイコン -->
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="bg-brand-dark text-white">
+        <div class="max-w-7xl mx-auto px-4 py-12 md:py-20 flex flex-col md:flex-row items-center gap-8">
+            <div class="flex-1 text-center md:text-left">
+                <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">Encuentra todo para <br><span class="text-brand-red">tu auto</span> al mejor precio</h1>
+                <p class="text-gray-300 mb-6">Refacciones originales y genéricas con envío a domicilio a todo México.</p>
+                <button class="bg-brand-red text-white font-bold py-3 px-8 rounded shadow-lg hover:bg-red-700 transition w-full md:w-auto">Ver Catálogo</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- カテゴリー (SP時は横スクロール) -->
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <div class="flex overflow-x-auto gap-4 pb-4 snap-x hide-scrollbar">
+            <!-- カテゴリアイテム (ループ想定) -->
+            <div class="snap-start shrink-0 w-24 h-24 bg-white rounded-lg shadow-sm flex flex-col items-center justify-center border border-gray-100 cursor-pointer hover:border-brand-red transition">
+                <span class="text-2xl mb-1">💎</span>
+                <span class="text-xs font-semibold text-gray-600">Accesorios</span>
+            </div>
+            <div class="snap-start shrink-0 w-24 h-24 bg-white rounded-lg shadow-sm flex flex-col items-center justify-center border border-gray-100 cursor-pointer hover:border-brand-red transition">
+                <span class="text-2xl mb-1">🛢️</span>
+                <span class="text-xs font-semibold text-gray-600">Aditivos</span>
+            </div>
+            <div class="snap-start shrink-0 w-24 h-24 bg-white rounded-lg shadow-sm flex flex-col items-center justify-center border border-gray-100 cursor-pointer hover:border-brand-red transition">
+                <span class="text-2xl mb-1">⚙️</span>
+                <span class="text-xs font-semibold text-gray-600">Dirección</span>
+            </div>
+            <div class="snap-start shrink-0 w-24 h-24 bg-white rounded-lg shadow-sm flex flex-col items-center justify-center border border-gray-100 cursor-pointer hover:border-brand-red transition">
+                <span class="text-2xl mb-1">⚡</span>
+                <span class="text-xs font-semibold text-gray-600">Eléctrico</span>
+            </div>
+            <div class="snap-start shrink-0 w-24 h-24 bg-white rounded-lg shadow-sm flex flex-col items-center justify-center border border-gray-100 cursor-pointer hover:border-brand-red transition">
+                <span class="text-2xl mb-1">🛑</span>
+                <span class="text-xs font-semibold text-gray-600">Frenos</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- 商品グリッド (SP 2カラム / PC 4カラム) -->
+    <section class="max-w-7xl mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold mb-6 text-brand-dark">Nuevos Productos</h2>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            
+            <!-- 商品カード 1 -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col">
+                <div class="h-40 md:h-48 bg-gray-200 flex items-center justify-center">
+                    <span class="text-gray-400 text-sm">[Imagen Producto]</span>
+                </div>
+                <div class="p-4 flex flex-col flex-1">
+                    <span class="text-xs text-brand-red font-bold mb-1">Suspensión</span>
+                    <h3 class="text-sm font-semibold text-gray-800 leading-tight mb-2 flex-1">Horquilla Inferior Derecha (Ejemplo)</h3>
+                    <div class="text-lg font-black text-brand-dark mb-3">$XXX.00</div>
+                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2.5 rounded transition">Añadir al carrito</button>
+                </div>
+            </div>
+
+            <!-- 商品カード 2 -->
+            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col">
+                <div class="h-40 md:h-48 bg-gray-200 flex items-center justify-center">
+                    <span class="text-gray-400 text-sm">[Imagen Producto]</span>
+                </div>
+                <div class="p-4 flex flex-col flex-1">
+                    <span class="text-xs text-brand-red font-bold mb-1">Aditivos</span>
+                    <h3 class="text-sm font-semibold text-gray-800 leading-tight mb-2 flex-1">Aceite Multigrado 1lt 25W-50</h3>
+                    <div class="text-lg font-black text-brand-dark mb-3">$XXX.00</div>
+                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2.5 rounded transition">Añadir al carrito</button>
+                </div>
+            </div>
+            
+            <!-- 他の商品カードを追加する場合はここに配置 -->
+
+        </div>
+    </section>
+
+    <!-- お問い合わせ・フッター -->
+    <footer class="bg-gray-100 mt-12 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 py-12 flex flex-col md:flex-row gap-8">
+            <div class="flex-1">
+                <h3 class="text-xl font-bold mb-4 text-brand-dark">¿Buscas una pieza específica?</h3>
+                <p class="text-sm text-gray-600 mb-4">Escríbenos y te ayudamos a cotizar tus refacciones al mejor precio.</p>
+                <a href="#" class="inline-flex items-center gap-2 bg-green-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 transition">
+                    Chatea por WhatsApp
+                </a>
+            </div>
+            <div class="flex-1 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <h4 class="font-bold mb-4">Cotiza aquí</h4>
+                <form class="space-y-3" onsubmit="event.preventDefault();">
+                    <input type="text" placeholder="Nombre" class="w-full border border-gray-300 rounded p-2 text-sm focus:outline-none focus:border-brand-red">
+                    <input type="tel" placeholder="Tel / Celular" class="w-full border border-gray-300 rounded p-2 text-sm focus:outline-none focus:border-brand-red">
+                    <textarea placeholder="Pregunta por la pieza o refacción..." class="w-full border border-gray-300 rounded p-2 text-sm h-24 focus:outline-none focus:border-brand-red"></textarea>
+                    <button type="submit" class="w-full bg-brand-dark text-white font-bold py-2 rounded hover:bg-gray-800 transition">Enviar Consulta</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+
+    <style>
+        /* SP時のカテゴリスライド用スクロールバー非表示設定 */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</body>
+</html>
