@@ -2,143 +2,202 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 検索エンジン避け（必須） -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- 検索エンジン避け -->
     <meta name="robots" content="noindex, nofollow">
     <title>Demo Autopartes | Refacciones</title>
+    <!-- モダンなフォント(Inter)を読み込み -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
                     colors: {
-                        brand: { red: '#C3002F', dark: '#1A1A1A' }
+                        brand: { red: '#E60000', dark: '#111827', light: '#F3F4F6' }
                     }
                 }
             }
         }
     </script>
+    <style>
+        /* 横スクロールのスクロールバー非表示 */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        /* ボトムナビゲーションの余白調整用 */
+        body { padding-bottom: 70px; }
+        @media (min-width: 768px) { body { padding-bottom: 0; } }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-800 font-sans">
+<body class="bg-brand-light text-gray-800 antialiased">
 
-    <!-- ヘッダー (StickyでSPでも常にナビゲーション可能に) -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="text-2xl font-black text-brand-dark tracking-tighter">
-                DEMO <span class="text-brand-red text-lg">AUTOPARTES</span>
+    <!-- ヘッダー: グラスモーフィズム (すりガラス効果) -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50 border-b border-gray-100 transition-all">
+        <div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="text-2xl font-black text-brand-dark tracking-tighter italic">
+                DEMO<span class="text-brand-red">AUTO</span>
             </div>
-            <div class="flex items-center gap-4">
-                <button class="text-sm font-semibold text-gray-600 hidden md:block">Tienda</button>
-                <button class="bg-brand-red text-white p-2 rounded-full hover:bg-red-700 transition">
-                    <!-- カートアイコン -->
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            <!-- PC向け検索バー -->
+            <div class="hidden md:flex flex-1 max-w-lg mx-8 relative">
+                <input type="text" placeholder="Buscar refacciones, marcas y más..." class="w-full bg-gray-100 rounded-full py-2.5 pl-5 pr-10 text-sm focus:outline-none focus:ring-2 focus:ring-brand-red/50 transition">
+                <svg class="w-5 h-5 text-gray-400 absolute right-4 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+            </div>
+            <div class="flex items-center gap-5">
+                <button class="text-sm font-semibold text-gray-600 hidden md:block hover:text-brand-red transition">Mi Cuenta</button>
+                <div class="relative cursor-pointer group">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-gray-700 group-hover:text-brand-red transition" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
-                </button>
+                    <!-- カートバッジ -->
+                    <span class="absolute -top-1 -right-2 bg-brand-red text-white text-[10px] font-bold px-1.5 py-0.5 rounded-full border-2 border-white">2</span>
+                </div>
             </div>
+        </div>
+        <!-- SP向け検索バー -->
+        <div class="md:hidden px-4 pb-3">
+            <input type="text" placeholder="Buscar refacciones..." class="w-full bg-gray-100 rounded-full py-2 pl-4 text-sm focus:outline-none focus:ring-2 focus:ring-brand-red/50">
         </div>
     </header>
 
-    <!-- ヒーローセクション -->
-    <section class="bg-brand-dark text-white">
-        <div class="max-w-7xl mx-auto px-4 py-12 md:py-20 flex flex-col md:flex-row items-center gap-8">
+    <!-- ヒーローセクション: ダークモダン -->
+    <section class="bg-gradient-to-r from-gray-900 via-brand-dark to-gray-800 text-white relative overflow-hidden">
+        <div class="absolute -right-20 -top-20 w-64 h-64 bg-brand-red rounded-full mix-blend-multiply filter blur-3xl opacity-20"></div>
+        <div class="max-w-7xl mx-auto px-4 py-10 md:py-16 flex flex-col md:flex-row items-center gap-8 relative z-10">
             <div class="flex-1 text-center md:text-left">
-                <h1 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">Encuentra todo para <br><span class="text-brand-red">tu auto</span> al mejor precio</h1>
-                <p class="text-gray-300 mb-6">Refacciones originales y genéricas con envío a domicilio a todo México.</p>
-                <button class="bg-brand-red text-white font-bold py-3 px-8 rounded shadow-lg hover:bg-red-700 transition w-full md:w-auto">Ver Catálogo</button>
+                <span class="inline-block bg-brand-red/20 text-brand-red text-xs font-bold px-3 py-1 rounded-full mb-4 border border-brand-red/30">Envío a todo México 🇲🇽</span>
+                <h1 class="text-3xl md:text-5xl font-black mb-4 leading-tight tracking-tight">Potencia tu camino con <span class="text-brand-red">las mejores piezas</span></h1>
+                <p class="text-gray-400 mb-6 text-sm md:text-base">Refacciones originales y genéricas de alta calidad al precio más competitivo del mercado.</p>
+                <button class="bg-white text-brand-dark font-bold py-3.5 px-8 rounded-full shadow-lg hover:scale-105 transition-transform duration-300 w-full md:w-auto">Comprar Ahora</button>
             </div>
         </div>
     </section>
 
-    <!-- カテゴリー (SP時は横スクロール) -->
+    <!-- カテゴリー: クリーンなアプリアイコン風 -->
     <section class="max-w-7xl mx-auto px-4 py-8">
-        <div class="flex overflow-x-auto gap-4 pb-4 snap-x hide-scrollbar">
-            <!-- カテゴリアイテム (ループ想定) -->
-            <div class="snap-start shrink-0 w-24 h-24 bg-white rounded-lg shadow-sm flex flex-col items-center justify-center border border-gray-100 cursor-pointer hover:border-brand-red transition">
-                <span class="text-2xl mb-1">💎</span>
-                <span class="text-xs font-semibold text-gray-600">Accesorios</span>
+        <div class="flex overflow-x-auto gap-4 pb-2 snap-x hide-scrollbar">
+            <!-- カテゴリ (ループ) -->
+            <div class="snap-start shrink-0 flex flex-col items-center gap-2 cursor-pointer group">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100 group-hover:border-brand-red group-hover:shadow-md transition-all">
+                    <span class="text-2xl md:text-3xl">💎</span>
+                </div>
+                <span class="text-[11px] md:text-xs font-semibold text-gray-600">Accesorios</span>
             </div>
-            <div class="snap-start shrink-0 w-24 h-24 bg-white rounded-lg shadow-sm flex flex-col items-center justify-center border border-gray-100 cursor-pointer hover:border-brand-red transition">
-                <span class="text-2xl mb-1">🛢️</span>
-                <span class="text-xs font-semibold text-gray-600">Aditivos</span>
+            <div class="snap-start shrink-0 flex flex-col items-center gap-2 cursor-pointer group">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100 group-hover:border-brand-red group-hover:shadow-md transition-all">
+                    <span class="text-2xl md:text-3xl">🛢️</span>
+                </div>
+                <span class="text-[11px] md:text-xs font-semibold text-gray-600">Aditivos</span>
             </div>
-            <div class="snap-start shrink-0 w-24 h-24 bg-white rounded-lg shadow-sm flex flex-col items-center justify-center border border-gray-100 cursor-pointer hover:border-brand-red transition">
-                <span class="text-2xl mb-1">⚙️</span>
-                <span class="text-xs font-semibold text-gray-600">Dirección</span>
+            <div class="snap-start shrink-0 flex flex-col items-center gap-2 cursor-pointer group">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100 group-hover:border-brand-red group-hover:shadow-md transition-all">
+                    <span class="text-2xl md:text-3xl">⚙️</span>
+                </div>
+                <span class="text-[11px] md:text-xs font-semibold text-gray-600">Dirección</span>
             </div>
-            <div class="snap-start shrink-0 w-24 h-24 bg-white rounded-lg shadow-sm flex flex-col items-center justify-center border border-gray-100 cursor-pointer hover:border-brand-red transition">
-                <span class="text-2xl mb-1">⚡</span>
-                <span class="text-xs font-semibold text-gray-600">Eléctrico</span>
+            <div class="snap-start shrink-0 flex flex-col items-center gap-2 cursor-pointer group">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100 group-hover:border-brand-red group-hover:shadow-md transition-all">
+                    <span class="text-2xl md:text-3xl">⚡</span>
+                </div>
+                <span class="text-[11px] md:text-xs font-semibold text-gray-600">Eléctrico</span>
             </div>
-            <div class="snap-start shrink-0 w-24 h-24 bg-white rounded-lg shadow-sm flex flex-col items-center justify-center border border-gray-100 cursor-pointer hover:border-brand-red transition">
-                <span class="text-2xl mb-1">🛑</span>
-                <span class="text-xs font-semibold text-gray-600">Frenos</span>
+            <div class="snap-start shrink-0 flex flex-col items-center gap-2 cursor-pointer group">
+                <div class="w-16 h-16 md:w-20 md:h-20 bg-white rounded-2xl shadow-sm flex items-center justify-center border border-gray-100 group-hover:border-brand-red group-hover:shadow-md transition-all">
+                    <span class="text-2xl md:text-3xl">🛑</span>
+                </div>
+                <span class="text-[11px] md:text-xs font-semibold text-gray-600">Frenos</span>
             </div>
         </div>
     </section>
 
-    <!-- 商品グリッド (SP 2カラム / PC 4カラム) -->
-    <section class="max-w-7xl mx-auto px-4 py-8">
-        <h2 class="text-2xl font-bold mb-6 text-brand-dark">Nuevos Productos</h2>
+    <!-- 商品グリッド: マイクロインタラクションとバッジ -->
+    <section class="max-w-7xl mx-auto px-4 py-6">
+        <div class="flex justify-between items-end mb-6">
+            <h2 class="text-xl md:text-2xl font-bold text-brand-dark">Ofertas Destacadas</h2>
+            <a href="#" class="text-sm font-semibold text-blue-600 hover:underline">Ver todo</a>
+        </div>
+        
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
             
             <!-- 商品カード 1 -->
-            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col">
-                <div class="h-40 md:h-48 bg-gray-200 flex items-center justify-center">
-                    <span class="text-gray-400 text-sm">[Imagen Producto]</span>
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+                <!-- バッジ -->
+                <div class="absolute top-2 left-2 bg-green-500 text-white text-[10px] font-bold px-2 py-1 rounded-md z-10">
+                    Llega mañana
+                </div>
+                <div class="h-36 md:h-48 bg-gray-50 flex items-center justify-center p-4 relative overflow-hidden">
+                    <div class="w-full h-full border-2 border-dashed border-gray-200 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                        <span class="text-gray-400 text-xs text-center">Imagen<br>Producto</span>
+                    </div>
                 </div>
                 <div class="p-4 flex flex-col flex-1">
-                    <span class="text-xs text-brand-red font-bold mb-1">Suspensión</span>
-                    <h3 class="text-sm font-semibold text-gray-800 leading-tight mb-2 flex-1">Horquilla Inferior Derecha (Ejemplo)</h3>
-                    <div class="text-lg font-black text-brand-dark mb-3">$XXX.00</div>
-                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2.5 rounded transition">Añadir al carrito</button>
+                    <span class="text-[10px] text-gray-500 uppercase font-semibold mb-1">Suspensión</span>
+                    <h3 class="text-sm font-medium text-gray-800 leading-tight mb-3 flex-1 line-clamp-2">Horquilla Inferior Derecha Modelo (Ejemplo)</h3>
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="text-lg md:text-xl font-black text-brand-dark">$XXX.00</div>
+                        <div class="text-xs text-green-600 font-bold hidden md:block">15% OFF</div>
+                    </div>
+                    <!-- ゴーストボタンからソリッドボタンへのホバー変化 -->
+                    <button class="w-full bg-gray-50 text-brand-dark border border-gray-200 hover:bg-brand-red hover:text-white hover:border-brand-red text-sm font-bold py-2.5 rounded-xl transition-colors">
+                        Agregar
+                    </button>
                 </div>
             </div>
 
             <!-- 商品カード 2 -->
-            <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden flex flex-col">
-                <div class="h-40 md:h-48 bg-gray-200 flex items-center justify-center">
-                    <span class="text-gray-400 text-sm">[Imagen Producto]</span>
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+                <div class="absolute top-2 left-2 bg-blue-500 text-white text-[10px] font-bold px-2 py-1 rounded-md z-10">
+                    Envío Gratis
+                </div>
+                <div class="h-36 md:h-48 bg-gray-50 flex items-center justify-center p-4 relative overflow-hidden">
+                    <div class="w-full h-full border-2 border-dashed border-gray-200 rounded-xl flex items-center justify-center group-hover:scale-105 transition-transform duration-500">
+                        <span class="text-gray-400 text-xs text-center">Imagen<br>Producto</span>
+                    </div>
                 </div>
                 <div class="p-4 flex flex-col flex-1">
-                    <span class="text-xs text-brand-red font-bold mb-1">Aditivos</span>
-                    <h3 class="text-sm font-semibold text-gray-800 leading-tight mb-2 flex-1">Aceite Multigrado 1lt 25W-50</h3>
-                    <div class="text-lg font-black text-brand-dark mb-3">$XXX.00</div>
-                    <button class="w-full bg-blue-600 hover:bg-blue-700 text-white text-sm font-semibold py-2.5 rounded transition">Añadir al carrito</button>
+                    <span class="text-[10px] text-gray-500 uppercase font-semibold mb-1">Aditivos</span>
+                    <h3 class="text-sm font-medium text-gray-800 leading-tight mb-3 flex-1 line-clamp-2">Aceite Multigrado 1lt 25W-50 Alto Kilometraje</h3>
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="text-lg md:text-xl font-black text-brand-dark">$XXX.00</div>
+                    </div>
+                    <button class="w-full bg-gray-50 text-brand-dark border border-gray-200 hover:bg-brand-red hover:text-white hover:border-brand-red text-sm font-bold py-2.5 rounded-xl transition-colors">
+                        Agregar
+                    </button>
                 </div>
             </div>
             
-            <!-- 他の商品カードを追加する場合はここに配置 -->
-
+            <!-- カード追加用スペース -->
         </div>
     </section>
 
-    <!-- お問い合わせ・フッター -->
-    <footer class="bg-gray-100 mt-12 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-4 py-12 flex flex-col md:flex-row gap-8">
-            <div class="flex-1">
-                <h3 class="text-xl font-bold mb-4 text-brand-dark">¿Buscas una pieza específica?</h3>
-                <p class="text-sm text-gray-600 mb-4">Escríbenos y te ayudamos a cotizar tus refacciones al mejor precio.</p>
-                <a href="#" class="inline-flex items-center gap-2 bg-green-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-green-600 transition">
-                    Chatea por WhatsApp
-                </a>
-            </div>
-            <div class="flex-1 bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-                <h4 class="font-bold mb-4">Cotiza aquí</h4>
-                <form class="space-y-3" onsubmit="event.preventDefault();">
-                    <input type="text" placeholder="Nombre" class="w-full border border-gray-300 rounded p-2 text-sm focus:outline-none focus:border-brand-red">
-                    <input type="tel" placeholder="Tel / Celular" class="w-full border border-gray-300 rounded p-2 text-sm focus:outline-none focus:border-brand-red">
-                    <textarea placeholder="Pregunta por la pieza o refacción..." class="w-full border border-gray-300 rounded p-2 text-sm h-24 focus:outline-none focus:border-brand-red"></textarea>
-                    <button type="submit" class="w-full bg-brand-dark text-white font-bold py-2 rounded hover:bg-gray-800 transition">Enviar Consulta</button>
-                </form>
-            </div>
+    <!-- SP向け: アプリ風ボトムナビゲーション (スマホ画面でのみ下部に固定表示) -->
+    <nav class="md:hidden fixed bottom-0 w-full bg-white border-t border-gray-200 z-50 flex justify-around items-center pb-safe pt-2 px-2 pb-2">
+        <a href="#" class="flex flex-col items-center gap-1 p-2 text-brand-red">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+            <span class="text-[10px] font-medium">Inicio</span>
+        </a>
+        <a href="#" class="flex flex-col items-center gap-1 p-2 text-gray-400 hover:text-gray-800 transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+            <span class="text-[10px] font-medium">Categorías</span>
+        </a>
+        <a href="#" class="flex flex-col items-center gap-1 p-2 text-gray-400 hover:text-gray-800 transition relative">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+            <span class="absolute top-1 right-2 bg-brand-red text-white text-[9px] font-bold px-1.5 rounded-full">2</span>
+            <span class="text-[10px] font-medium">Carrito</span>
+        </a>
+        <a href="#" class="flex flex-col items-center gap-1 p-2 text-gray-400 hover:text-gray-800 transition">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+            <span class="text-[10px] font-medium">Perfil</span>
+        </a>
+    </nav>
+
+    <!-- フッター -->
+    <footer class="bg-gray-100 mt-12 pb-16 md:pb-0">
+        <!-- ボトムナビゲーションがあるため、SPのみ下部余白(pb-16)を確保 -->
+        <div class="max-w-7xl mx-auto px-4 py-12 text-center text-gray-500 text-sm">
+            <p>&copy; 2026 Demo Autopartes. Todos los derechos reservados.</p>
         </div>
     </footer>
 
-    <style>
-        /* SP時のカテゴリスライド用スクロールバー非表示設定 */
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    </style>
 </body>
 </html>
