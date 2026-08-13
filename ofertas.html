@@ -56,19 +56,19 @@ tailwind.config = {
 <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
   <div class="max-w-7xl mx-auto px-4 py-3 md:py-4 flex justify-between items-center gap-4 md:gap-8">
     <a href="index.html" class="block shrink-0"><img src="images/logo.webp" alt="Autopartes Johnny's" class="h-10 md:h-12 w-auto object-contain"></a>
-    <div class="hidden md:flex flex-1 max-w-xl relative">
-      <input type="text" placeholder="Busca por pieza, marca, modelo..." class="w-full bg-gray-100 text-ink font-medium placeholder-gray-500 rounded-l-lg py-3 pl-4 pr-4 focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue border border-transparent focus:border-blue transition-all">
+    <div class="hidden md:flex flex-1 max-w-xl relative js-search-wrap">
+      <input type="text" placeholder="Busca por pieza, marca, modelo..." class="js-search-input w-full bg-gray-100 text-ink font-medium placeholder-gray-500 rounded-l-lg py-3 pl-4 pr-4 focus:outline-none focus:bg-white focus:ring-2 focus:ring-blue border border-transparent focus:border-blue transition-all">
       <button class="bg-blue text-white px-6 rounded-r-lg hover:bg-blue-dark transition-colors flex items-center justify-center">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
       </button>
     </div>
     <div class="flex items-center gap-4 md:gap-6">
       <button class="text-sm font-bold text-steel hidden md:block hover:text-pink transition-colors">Iniciar Sesión</button>
-      <div class="relative cursor-pointer group flex items-center justify-center w-11 h-11 md:w-12 md:h-12 bg-gray-50 rounded-full border border-gray-200 hover:border-pink transition-colors">
+      <div onclick="JohnnysCart.toggleCart()" class="relative cursor-pointer group flex items-center justify-center w-11 h-11 md:w-12 md:h-12 bg-gray-50 rounded-full border border-gray-200 hover:border-pink transition-colors">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 md:h-6 md:w-6 text-ink group-hover:text-pink transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
         </svg>
-        <span class="absolute -top-1 -right-1 bg-pink text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white">2</span>
+        <span class="js-cart-badge absolute -top-1 -right-1 bg-pink text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white">0</span>
       </div>
     </div>
   </div>
@@ -129,7 +129,7 @@ tailwind.config = {
           <span class="text-base md:text-lg font-display font-semibold text-pink">$224.00</span>
           <span class="text-xs text-gray-400 line-through">$280.00</span>
         </div>
-        <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+        <button data-add-cart data-ref="OIL-5W30-1L" data-name="Aceite Synth-Etec Full Synthetic 5W-30 1L" data-price="224" data-img="images/sample4.webp" class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
       </div>
     </div>
 
@@ -148,7 +148,7 @@ tailwind.config = {
           <span class="text-base md:text-lg font-display font-semibold text-pink">$1,785.00</span>
           <span class="text-xs text-gray-400 line-through">$2,100.00</span>
         </div>
-        <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+        <button data-add-cart data-ref="THR-410" data-name="Cuerpo de Aceleración Electrónico O.E.M." data-price="1785" data-img="images/sample6.webp" class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
       </div>
     </div>
 
@@ -167,7 +167,7 @@ tailwind.config = {
           <span class="text-base md:text-lg font-display font-semibold text-pink">$736.00</span>
           <span class="text-xs text-gray-400 line-through">$920.00</span>
         </div>
-        <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+        <button data-add-cart data-ref="OIL-0W30-5L" data-name="Aceite Synth-Etec Full Synthetic 0W-30 5L" data-price="736" data-img="images/sample10.webp" class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
       </div>
     </div>
 
@@ -186,7 +186,7 @@ tailwind.config = {
           <span class="text-base md:text-lg font-display font-semibold text-pink">$977.00</span>
           <span class="text-xs text-gray-400 line-through">$1,150.00</span>
         </div>
-        <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+        <button data-add-cart data-ref="MAF-105" data-name="Sensor de Flujo de Masa de Aire (MAF)" data-price="977" data-img="images/sample8.webp" class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
       </div>
     </div>
 
@@ -205,7 +205,7 @@ tailwind.config = {
           <span class="text-base md:text-lg font-display font-semibold text-pink">$807.00</span>
           <span class="text-xs text-gray-400 line-through">$950.00</span>
         </div>
-        <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+        <button data-add-cart data-ref="OIL-5W40-SE5L" data-name="Aceite Synth-Etec Full Synthetic 5W-40 5L" data-price="807" data-img="images/sample11.webp" class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
       </div>
     </div>
 
@@ -224,7 +224,7 @@ tailwind.config = {
           <span class="text-base md:text-lg font-display font-semibold text-pink">$799.00</span>
           <span class="text-xs text-gray-400 line-through">$940.00</span>
         </div>
-        <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+        <button data-add-cart data-ref="OIL-0W30-P5L" data-name="Aceite Synth-Etec 0W-30 5L Edición Premium" data-price="799" data-img="images/sample12.webp" class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
       </div>
     </div>
 
@@ -243,7 +243,7 @@ tailwind.config = {
           <span class="text-base md:text-lg font-display font-semibold text-pink">$833.00</span>
           <span class="text-xs text-gray-400 line-through">$980.00</span>
         </div>
-        <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+        <button data-add-cart data-ref="OIL-5W40-5L" data-name="Aceite Synth-Etec Ultra-Performance 5W-40 5L" data-price="833" data-img="images/sample7.webp" class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
       </div>
     </div>
 
@@ -262,7 +262,7 @@ tailwind.config = {
           <span class="text-base md:text-lg font-display font-semibold text-pink">$1,122.00</span>
           <span class="text-xs text-gray-400 line-through">$1,320.00</span>
         </div>
-        <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+        <button data-add-cart data-ref="INJ-3021" data-name="Inyector de Combustible de Alta Precisión" data-price="1122" data-img="images/sample13.webp" class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
       </div>
     </div>
 
@@ -284,9 +284,9 @@ tailwind.config = {
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
     <span class="text-[9px] font-bold">SUCURSALES</span>
   </a>
-  <a href="#" class="flex flex-col items-center gap-1 p-2 text-steel hover:text-ink relative transition-colors">
+  <a href="#" onclick="JohnnysCart.toggleCart(); return false;" class="flex flex-col items-center gap-1 p-2 text-steel hover:text-ink relative transition-colors">
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path></svg>
-    <span class="absolute top-1 right-2 bg-pink text-white text-[9px] font-bold h-4 w-4 flex items-center justify-center rounded-full border border-white">2</span>
+    <span class="js-cart-badge absolute top-1 right-2 bg-pink text-white text-[9px] font-bold h-4 w-4 flex items-center justify-center rounded-full border border-white">0</span>
     <span class="text-[9px] font-bold">CARRITO</span>
   </a>
 </nav>
@@ -353,5 +353,27 @@ tailwind.config = {
   <svg class="w-7 h-7 text-white" fill="currentColor" viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm0 18.13h-.01a8.2 8.2 0 01-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 01-1.26-4.4c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 012.42 5.83c0 4.55-3.7 8.25-8.25 8.25zm4.52-6.17c-.25-.12-1.47-.72-1.7-.81-.23-.08-.39-.12-.56.13-.17.25-.64.81-.78.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.24-1.47-1.38-1.72-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.12-.14.16-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.41-.42-.56-.43-.14-.01-.31-.01-.48-.01-.17 0-.43.06-.66.31-.23.25-.86.84-.86 2.05s.88 2.38 1 2.54c.12.17 1.73 2.64 4.19 3.71.59.25 1.04.4 1.4.51.59.19 1.12.16 1.55.1.47-.07 1.47-.6 1.68-1.18.2-.58.2-1.07.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
 </a>
 
+<!-- Cart drawer -->
+<div id="cart-overlay" onclick="JohnnysCart.closeCart()" class="fixed inset-0 bg-ink/50 z-[60] opacity-0 pointer-events-none transition-opacity duration-300"></div>
+<aside id="cart-drawer" class="fixed top-0 right-0 h-full w-full sm:w-[400px] bg-white z-[70] shadow-2xl translate-x-full transition-transform duration-300 flex flex-col">
+  <div class="flex items-center justify-between px-5 py-4 border-b border-gray-100">
+    <h3 class="font-display font-semibold text-lg text-ink uppercase">Tu Carrito</h3>
+    <button onclick="JohnnysCart.closeCart()" aria-label="Cerrar carrito" class="w-9 h-9 rounded-full hover:bg-gray-100 flex items-center justify-center text-steel">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+  </div>
+  <div id="cart-drawer-body" class="flex-1 overflow-y-auto px-5"></div>
+  <div id="cart-drawer-footer" class="border-t border-gray-100 p-5 space-y-3 hidden">
+    <div class="flex items-center justify-between text-sm font-bold text-ink">
+      <span>Subtotal</span>
+      <span id="cart-drawer-total" class="text-lg font-display font-semibold text-pink">$0.00</span>
+    </div>
+    <p class="text-[11px] text-steel">Envío e impuestos calculados al finalizar la compra.</p>
+    <a href="sucursales.html" class="block text-center bg-pink hover:bg-pink-dark text-white font-bold uppercase tracking-wide text-sm py-3.5 rounded-lg transition-colors">Finalizar Compra</a>
+    <button onclick="JohnnysCart.closeCart()" class="w-full text-center text-steel hover:text-ink text-xs font-bold uppercase tracking-wide py-1">Seguir comprando</button>
+  </div>
+</aside>
+
+<script src="assets/app.js"></script>
 </body>
 </html>
