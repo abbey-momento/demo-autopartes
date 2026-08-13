@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <meta name="robots" content="noindex, nofollow">
-<title>Autopartes Johnny's | Sucursales y Contacto</title>
+<title>Autopartes Johnny's | Ofertas de la Semana</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
@@ -33,6 +33,7 @@ tailwind.config = {
   body{padding-bottom:66px}
   @media (min-width:768px){ body{padding-bottom:0} }
   .wedge{clip-path:polygon(28% 0%,100% 0%,72% 100%,0% 100%)}
+  .ribbon{clip-path:polygon(0 0,100% 0,100% 70%,50% 100%,0 70%)}
 </style>
 </head>
 <body class="bg-bg text-ink font-sans antialiased selection:bg-pink selection:text-white">
@@ -41,7 +42,7 @@ tailwind.config = {
   <div class="max-w-7xl mx-auto flex justify-between items-center font-medium tracking-wide">
     <div class="flex items-center gap-4"><span class="text-pink font-black">///</span><span>Envíos a todo México con garantía de entrega</span></div>
     <div class="flex items-center gap-5">
-      <a href="sucursales.html" class="text-white">Sucursales</a>
+      <a href="sucursales.html" class="hover:text-white transition-colors">Sucursales</a>
       <a href="sucursales.html#contacto" class="hover:text-white transition-colors">Soporte</a>
       <div class="flex items-center gap-3 pl-5 border-l border-gray-700">
         <a href="#" aria-label="Facebook" class="hover:text-pink transition-colors"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0022 12z"/></svg></a>
@@ -75,14 +76,14 @@ tailwind.config = {
     <div class="max-w-7xl mx-auto px-4 flex items-center gap-8 text-sm font-bold uppercase tracking-wide text-steel">
       <a href="index.html" class="py-3 hover:text-ink transition-colors">Inicio</a>
       <a href="products.html" class="py-3 hover:text-ink transition-colors">Catálogo</a>
-      <a href="ofertas.html" class="py-3 hover:text-ink transition-colors">Ofertas</a>
-      <a href="sucursales.html" class="py-3 text-pink border-b-2 border-pink">Sucursales</a>
+      <a href="ofertas.html" class="py-3 text-pink border-b-2 border-pink">Ofertas</a>
+      <a href="sucursales.html" class="py-3 hover:text-ink transition-colors">Sucursales</a>
       <a href="sucursales.html#contacto" class="py-3 hover:text-ink transition-colors">Contacto</a>
     </div>
   </nav>
 </header>
 
-<!-- Page hero -->
+<!-- Ofertas hero -->
 <section class="relative bg-ink overflow-hidden">
   <div class="pointer-events-none absolute -top-16 -right-16 w-72 h-72 hidden md:block">
     <div class="absolute inset-0 bg-pink wedge"></div>
@@ -90,129 +91,176 @@ tailwind.config = {
   </div>
   <div class="relative z-10 max-w-7xl mx-auto px-4 pt-12 pb-16 md:pt-16 md:pb-20">
     <nav class="flex text-xs text-gray-400 gap-1.5 mb-5">
-      <a href="index.html" class="hover:text-white">Inicio</a><span>/</span><span class="text-white font-medium">Sucursales</span>
+      <a href="index.html" class="hover:text-white">Inicio</a><span>/</span><span class="text-white font-medium">Ofertas</span>
     </nav>
-    <span class="inline-block bg-pink text-white text-xs md:text-sm font-bold tracking-widest uppercase px-3 py-1.5 mb-4 rounded-sm">3 puntos de venta en México</span>
-    <h1 class="text-3xl md:text-6xl font-display font-semibold text-white uppercase leading-[0.95] mb-4">Sucursales &amp; Contacto</h1>
-    <p class="text-gray-300 max-w-xl text-sm md:text-base font-medium">Visítanos para recoger tu pedido, recibir asesoría técnica o resolver garantías en persona. Elige la sucursal más cercana.</p>
+    <span class="inline-flex items-center gap-2 bg-pink text-white text-xs md:text-sm font-bold tracking-widest uppercase px-3 py-1.5 mb-4 rounded-sm">
+      <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+      Vigente del 1 al 31 de agosto de 2026
+    </span>
+    <h1 class="text-3xl md:text-6xl font-display font-semibold text-white uppercase leading-[0.95] mb-4">Hasta 20% de<br>descuento</h1>
+    <p class="text-gray-300 max-w-xl text-sm md:text-base font-medium">Aceites, motor y eléctrico con precio especial por tiempo limitado. Aplican restricciones, consulta productos participantes.</p>
   </div>
 </section>
 
 <main class="max-w-7xl mx-auto px-4 py-10 md:py-14">
 
-  <!-- Store cards -->
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-
-    <!-- Sucursal Toluca -->
-    <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col">
-      <div class="h-40 relative">
-        <iframe class="w-full h-full grayscale-[20%]" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps?q=Toluca+de+Lerdo,+Estado+de+M%C3%A9xico&output=embed"></iframe>
-        <span class="absolute top-3 left-3 bg-blue text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">Matriz</span>
-      </div>
-      <div class="p-6 flex flex-col flex-1">
-        <h3 class="text-lg font-display font-semibold text-ink uppercase mb-3">Sucursal Toluca</h3>
-        <ul class="space-y-2.5 text-sm text-steel mb-5">
-          <li class="flex gap-2.5"><svg class="w-4 h-4 text-pink shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>Av. Paseo Tollocan 1425, Col. Zopilocalco, 50040 Toluca, Méx.</li>
-          <li class="flex gap-2.5"><svg class="w-4 h-4 text-pink shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Lun–Sáb 9:00–19:00 · Dom 10:00–15:00</li>
-          <li class="flex gap-2.5"><svg class="w-4 h-4 text-pink shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>(722) 210 4488</li>
-        </ul>
-        <div class="mt-auto flex gap-2">
-          <a href="https://wa.me/527222104488" class="flex-1 text-center bg-pink hover:bg-pink-dark text-white text-xs font-bold py-2.5 rounded-lg transition-colors">WhatsApp</a>
-          <a href="https://www.google.com/maps?q=Toluca+de+Lerdo,+Estado+de+M%C3%A9xico" target="_blank" rel="noopener" class="flex-1 text-center bg-gray-100 hover:bg-gray-200 text-ink text-xs font-bold py-2.5 rounded-lg transition-colors">Cómo llegar</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sucursal CDMX -->
-    <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col">
-      <div class="h-40 relative">
-        <iframe class="w-full h-full grayscale-[20%]" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps?q=Iztapalapa,+Ciudad+de+M%C3%A9xico&output=embed"></iframe>
-        <span class="absolute top-3 left-3 bg-ink text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">CDMX</span>
-      </div>
-      <div class="p-6 flex flex-col flex-1">
-        <h3 class="text-lg font-display font-semibold text-ink uppercase mb-3">Sucursal Ciudad de México</h3>
-        <ul class="space-y-2.5 text-sm text-steel mb-5">
-          <li class="flex gap-2.5"><svg class="w-4 h-4 text-pink shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>Calz. Ermita Iztapalapa 3102, Iztapalapa, 09310 CDMX</li>
-          <li class="flex gap-2.5"><svg class="w-4 h-4 text-pink shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Lun–Sáb 9:00–19:00 · Dom 10:00–15:00</li>
-          <li class="flex gap-2.5"><svg class="w-4 h-4 text-pink shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>(55) 5685 3390</li>
-        </ul>
-        <div class="mt-auto flex gap-2">
-          <a href="https://wa.me/525556853390" class="flex-1 text-center bg-pink hover:bg-pink-dark text-white text-xs font-bold py-2.5 rounded-lg transition-colors">WhatsApp</a>
-          <a href="https://www.google.com/maps?q=Iztapalapa,+Ciudad+de+M%C3%A9xico" target="_blank" rel="noopener" class="flex-1 text-center bg-gray-100 hover:bg-gray-200 text-ink text-xs font-bold py-2.5 rounded-lg transition-colors">Cómo llegar</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Sucursal Guadalajara -->
-    <div class="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden flex flex-col">
-      <div class="h-40 relative">
-        <iframe class="w-full h-full grayscale-[20%]" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-          src="https://www.google.com/maps?q=Zapopan,+Jalisco&output=embed"></iframe>
-        <span class="absolute top-3 left-3 bg-blue text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">Nueva</span>
-      </div>
-      <div class="p-6 flex flex-col flex-1">
-        <h3 class="text-lg font-display font-semibold text-ink uppercase mb-3">Sucursal Guadalajara</h3>
-        <ul class="space-y-2.5 text-sm text-steel mb-5">
-          <li class="flex gap-2.5"><svg class="w-4 h-4 text-pink shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>Av. Vallarta 6503, Zapopan, 45010 Jalisco</li>
-          <li class="flex gap-2.5"><svg class="w-4 h-4 text-pink shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>Lun–Sáb 9:30–18:30 · Dom cerrado</li>
-          <li class="flex gap-2.5"><svg class="w-4 h-4 text-pink shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>(33) 3630 1177</li>
-        </ul>
-        <div class="mt-auto flex gap-2">
-          <a href="https://wa.me/523336301177" class="flex-1 text-center bg-pink hover:bg-pink-dark text-white text-xs font-bold py-2.5 rounded-lg transition-colors">WhatsApp</a>
-          <a href="https://www.google.com/maps?q=Zapopan,+Jalisco" target="_blank" rel="noopener" class="flex-1 text-center bg-gray-100 hover:bg-gray-200 text-ink text-xs font-bold py-2.5 rounded-lg transition-colors">Cómo llegar</a>
-        </div>
-      </div>
-    </div>
+  <!-- Filter chips -->
+  <div class="flex flex-wrap gap-2 mb-8">
+    <button class="bg-ink text-white text-xs font-bold uppercase tracking-wide px-4 py-2 rounded-full">Todas las ofertas</button>
+    <button class="bg-white border border-gray-200 text-steel hover:border-pink hover:text-pink text-xs font-bold uppercase tracking-wide px-4 py-2 rounded-full transition-colors">Aceites y Aditivos</button>
+    <button class="bg-white border border-gray-200 text-steel hover:border-pink hover:text-pink text-xs font-bold uppercase tracking-wide px-4 py-2 rounded-full transition-colors">Motor</button>
+    <button class="bg-white border border-gray-200 text-steel hover:border-pink hover:text-pink text-xs font-bold uppercase tracking-wide px-4 py-2 rounded-full transition-colors">Eléctrico</button>
   </div>
 
-  <!-- General contact -->
-  <div id="contacto" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
-    <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 md:p-8">
-      <h2 class="text-xl md:text-2xl font-display font-semibold text-ink uppercase mb-5 flex items-center gap-3"><span class="w-1.5 h-7 bg-pink inline-block"></span>Atención al cliente</h2>
-      <div class="space-y-4 text-sm text-steel">
-        <div class="flex items-start gap-3">
-          <div class="w-9 h-9 rounded-lg bg-pink/10 text-pink flex items-center justify-center shrink-0"><svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg></div>
-          <div><p class="font-bold text-ink">Línea nacional</p><p>800 000 4455 · Lun–Vie 9:00–18:00</p></div>
-        </div>
-        <div class="flex items-start gap-3">
-          <div class="w-9 h-9 rounded-lg bg-blue/10 text-blue flex items-center justify-center shrink-0"><svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg></div>
-          <div><p class="font-bold text-ink">Correo</p><p>contacto@autopartesjohnnys.mx</p></div>
-        </div>
-        <div class="flex items-start gap-3">
-          <div class="w-9 h-9 rounded-lg bg-pink/10 text-pink flex items-center justify-center shrink-0"><svg class="w-4.5 h-4.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg></div>
-          <div><p class="font-bold text-ink">WhatsApp Ventas</p><p>Respuesta en menos de 15 min en horario de tienda</p></div>
-        </div>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
+
+    <!-- Oferta 1 -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+      <a href="product-detail.html" class="absolute inset-0 z-10"></a>
+      <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3 relative">
+        <div class="absolute top-0 left-2 bg-pink text-white text-[10px] font-bold px-2 py-1 rounded-b uppercase tracking-wider">-20%</div>
+        <img src="images/sample4.webp" alt="Aceite Synth-Etec 5W-30 1L" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
       </div>
-      <a href="https://wa.me/527220000000" class="mt-6 inline-flex items-center gap-2 bg-pink hover:bg-pink-dark text-white text-sm font-bold px-6 py-3 rounded-lg transition-colors">Escribir por WhatsApp</a>
+      <div class="p-3 md:p-4 flex flex-col flex-1">
+        <span class="text-[9px] md:text-[10px] text-steel uppercase font-semibold font-mono">Aceites · REF. OIL-5W30-1L</span>
+        <h3 class="text-xs md:text-sm font-medium text-ink leading-tight my-2 flex-1 line-clamp-2">Aceite Synth-Etec Full Synthetic 5W-30 1L</h3>
+        <div class="flex items-center gap-2 mb-2.5">
+          <span class="text-base md:text-lg font-display font-semibold text-pink">$224.00</span>
+          <span class="text-xs text-gray-400 line-through">$280.00</span>
+        </div>
+        <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+      </div>
     </div>
 
-    <div class="bg-ink rounded-2xl p-6 md:p-8 relative overflow-hidden">
-      <div class="pointer-events-none absolute -bottom-10 -right-10 w-48 h-48 opacity-70">
-        <div class="absolute inset-0 bg-blue wedge"></div>
-        <div class="absolute inset-0 bg-pink wedge -translate-x-8 opacity-90"></div>
+    <!-- Oferta 2 -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+      <a href="product-detail.html" class="absolute inset-0 z-10"></a>
+      <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3 relative">
+        <div class="absolute top-0 left-2 bg-pink text-white text-[10px] font-bold px-2 py-1 rounded-b uppercase tracking-wider">-15%</div>
+        <img src="images/sample6.webp" alt="Cuerpo de Aceleración" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
       </div>
-      <div class="relative z-10">
-        <h2 class="text-xl md:text-2xl font-display font-semibold text-white uppercase mb-4 flex items-center gap-3"><span class="w-1.5 h-7 bg-blue inline-block"></span>Preguntas frecuentes</h2>
-        <div class="space-y-4 text-sm">
-          <div>
-            <p class="font-bold text-white mb-1">¿Puedo recoger mi pedido en tienda?</p>
-            <p class="text-gray-400">Sí, selecciona "Recoger en sucursal" al finalizar tu compra en línea. Tu pedido estará listo en 2 horas hábiles.</p>
-          </div>
-          <div>
-            <p class="font-bold text-white mb-1">¿Las piezas tienen garantía?</p>
-            <p class="text-gray-400">Todas nuestras refacciones cuentan con garantía de fábrica; puedes tramitarla en cualquier sucursal con tu ticket de compra.</p>
-          </div>
-          <div>
-            <p class="font-bold text-white mb-1">¿Hacen envíos a domicilio?</p>
-            <p class="text-gray-400">Sí, enviamos a todo México en 2–5 días hábiles desde cualquiera de nuestras 3 sucursales.</p>
-          </div>
+      <div class="p-3 md:p-4 flex flex-col flex-1">
+        <span class="text-[9px] md:text-[10px] text-steel uppercase font-semibold font-mono">Motor · REF. THR-410</span>
+        <h3 class="text-xs md:text-sm font-medium text-ink leading-tight my-2 flex-1 line-clamp-2">Cuerpo de Aceleración Electrónico O.E.M.</h3>
+        <div class="flex items-center gap-2 mb-2.5">
+          <span class="text-base md:text-lg font-display font-semibold text-pink">$1,785.00</span>
+          <span class="text-xs text-gray-400 line-through">$2,100.00</span>
         </div>
+        <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
       </div>
     </div>
+
+    <!-- Oferta 3 -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+      <a href="product-detail.html" class="absolute inset-0 z-10"></a>
+      <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3 relative">
+        <div class="absolute top-0 left-2 bg-pink text-white text-[10px] font-bold px-2 py-1 rounded-b uppercase tracking-wider">-20%</div>
+        <img src="images/sample10.webp" alt="Aceite 0W-30 5L" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="p-3 md:p-4 flex flex-col flex-1">
+        <span class="text-[9px] md:text-[10px] text-steel uppercase font-semibold font-mono">Aceites · REF. OIL-0W30-5L</span>
+        <h3 class="text-xs md:text-sm font-medium text-ink leading-tight my-2 flex-1 line-clamp-2">Aceite Synth-Etec Full Synthetic 0W-30 5L</h3>
+        <div class="flex items-center gap-2 mb-2.5">
+          <span class="text-base md:text-lg font-display font-semibold text-pink">$736.00</span>
+          <span class="text-xs text-gray-400 line-through">$920.00</span>
+        </div>
+        <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+      </div>
+    </div>
+
+    <!-- Oferta 4 -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+      <a href="product-detail.html" class="absolute inset-0 z-10"></a>
+      <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3 relative">
+        <div class="absolute top-0 left-2 bg-pink text-white text-[10px] font-bold px-2 py-1 rounded-b uppercase tracking-wider">-15%</div>
+        <img src="images/sample8.webp" alt="Sensor MAF" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="p-3 md:p-4 flex flex-col flex-1">
+        <span class="text-[9px] md:text-[10px] text-steel uppercase font-semibold font-mono">Motor · REF. MAF-105</span>
+        <h3 class="text-xs md:text-sm font-medium text-ink leading-tight my-2 flex-1 line-clamp-2">Sensor de Flujo de Masa de Aire (MAF)</h3>
+        <div class="flex items-center gap-2 mb-2.5">
+          <span class="text-base md:text-lg font-display font-semibold text-pink">$977.00</span>
+          <span class="text-xs text-gray-400 line-through">$1,150.00</span>
+        </div>
+        <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+      </div>
+    </div>
+
+    <!-- Oferta 5 -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+      <a href="product-detail.html" class="absolute inset-0 z-10"></a>
+      <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3 relative">
+        <div class="absolute top-0 left-2 bg-pink text-white text-[10px] font-bold px-2 py-1 rounded-b uppercase tracking-wider">-15%</div>
+        <img src="images/sample11.webp" alt="Aceite 5W-40 5L" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="p-3 md:p-4 flex flex-col flex-1">
+        <span class="text-[9px] md:text-[10px] text-steel uppercase font-semibold font-mono">Aceites · REF. OIL-5W40-SE5L</span>
+        <h3 class="text-xs md:text-sm font-medium text-ink leading-tight my-2 flex-1 line-clamp-2">Aceite Synth-Etec Full Synthetic 5W-40 5L</h3>
+        <div class="flex items-center gap-2 mb-2.5">
+          <span class="text-base md:text-lg font-display font-semibold text-pink">$807.00</span>
+          <span class="text-xs text-gray-400 line-through">$950.00</span>
+        </div>
+        <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+      </div>
+    </div>
+
+    <!-- Oferta 6 -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+      <a href="product-detail.html" class="absolute inset-0 z-10"></a>
+      <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3 relative">
+        <div class="absolute top-0 left-2 bg-pink text-white text-[10px] font-bold px-2 py-1 rounded-b uppercase tracking-wider">-15%</div>
+        <img src="images/sample12.webp" alt="Aceite 0W-30 5L edición" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="p-3 md:p-4 flex flex-col flex-1">
+        <span class="text-[9px] md:text-[10px] text-steel uppercase font-semibold font-mono">Aceites · REF. OIL-0W30-P5L</span>
+        <h3 class="text-xs md:text-sm font-medium text-ink leading-tight my-2 flex-1 line-clamp-2">Aceite Synth-Etec 0W-30 5L Edición Premium</h3>
+        <div class="flex items-center gap-2 mb-2.5">
+          <span class="text-base md:text-lg font-display font-semibold text-pink">$799.00</span>
+          <span class="text-xs text-gray-400 line-through">$940.00</span>
+        </div>
+        <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+      </div>
+    </div>
+
+    <!-- Oferta 7 -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+      <a href="product-detail.html" class="absolute inset-0 z-10"></a>
+      <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3 relative">
+        <div class="absolute top-0 left-2 bg-pink text-white text-[10px] font-bold px-2 py-1 rounded-b uppercase tracking-wider">-15%</div>
+        <img src="images/sample7.webp" alt="Aceite Ultra-Performance 5W-40 5L" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="p-3 md:p-4 flex flex-col flex-1">
+        <span class="text-[9px] md:text-[10px] text-steel uppercase font-semibold font-mono">Aceites · REF. OIL-5W40-5L</span>
+        <h3 class="text-xs md:text-sm font-medium text-ink leading-tight my-2 flex-1 line-clamp-2">Aceite Synth-Etec Ultra-Performance 5W-40 5L</h3>
+        <div class="flex items-center gap-2 mb-2.5">
+          <span class="text-base md:text-lg font-display font-semibold text-pink">$833.00</span>
+          <span class="text-xs text-gray-400 line-through">$980.00</span>
+        </div>
+        <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+      </div>
+    </div>
+
+    <!-- Oferta 8 -->
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden flex flex-col group hover:-translate-y-1 hover:shadow-xl transition-all duration-300 relative">
+      <a href="product-detail.html" class="absolute inset-0 z-10"></a>
+      <div class="h-32 md:h-44 bg-gray-50 flex items-center justify-center p-3 relative">
+        <div class="absolute top-0 left-2 bg-pink text-white text-[10px] font-bold px-2 py-1 rounded-b uppercase tracking-wider">-15%</div>
+        <img src="images/sample13.webp" alt="Inyector de combustible" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500">
+      </div>
+      <div class="p-3 md:p-4 flex flex-col flex-1">
+        <span class="text-[9px] md:text-[10px] text-steel uppercase font-semibold font-mono">Motor · REF. INJ-3021</span>
+        <h3 class="text-xs md:text-sm font-medium text-ink leading-tight my-2 flex-1 line-clamp-2">Inyector de Combustible de Alta Precisión</h3>
+        <div class="flex items-center gap-2 mb-2.5">
+          <span class="text-base md:text-lg font-display font-semibold text-pink">$1,122.00</span>
+          <span class="text-xs text-gray-400 line-through">$1,320.00</span>
+        </div>
+        <button class="w-full bg-ink text-white hover:bg-pink text-xs md:text-sm font-bold py-2 md:py-2.5 rounded-xl transition-colors relative z-20">Agregar</button>
+      </div>
+    </div>
+
   </div>
 
+  <p class="text-center text-xs text-steel mt-8">*Aplican restricciones. Precios en pesos mexicanos, sujetos a disponibilidad de inventario en sucursal.</p>
 </main>
 
 <nav class="md:hidden fixed bottom-0 w-full bg-white border-t border-gray-200 z-50 flex justify-around items-center pt-2 px-2 pb-2 shadow-[0_-5px_15px_rgba(0,0,0,0.05)]">
@@ -224,7 +272,7 @@ tailwind.config = {
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
     <span class="text-[9px] font-bold">CATÁLOGO</span>
   </a>
-  <a href="sucursales.html" class="flex flex-col items-center gap-1 p-2 text-pink">
+  <a href="sucursales.html" class="flex flex-col items-center gap-1 p-2 text-steel hover:text-ink transition-colors">
     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0l-4.243-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
     <span class="text-[9px] font-bold">SUCURSALES</span>
   </a>
@@ -235,7 +283,7 @@ tailwind.config = {
   </a>
 </nav>
 
-<footer class="bg-ink text-gray-400 mt-4 pb-20 md:pb-0">
+<footer id="contacto" class="bg-ink text-gray-400 mt-12 pb-20 md:pb-0">
   <div class="max-w-7xl mx-auto px-4 py-16 grid grid-cols-2 md:grid-cols-5 gap-8 md:gap-10 text-sm">
     <div class="col-span-2">
       <img src="images/logo.webp" alt="Autopartes Johnny's" class="h-10 mb-6 brightness-0 invert opacity-90">
